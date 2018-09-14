@@ -1,0 +1,2 @@
+C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
