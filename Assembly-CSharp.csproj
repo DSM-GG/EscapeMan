@@ -61,6 +61,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Character\Attack.cs" />
+    <Compile Include="Assets\Scripts\Character\Bullet.cs" />
+    <Compile Include="Assets\Scripts\Character\Camera.cs" />
+    <Compile Include="Assets\Scripts\Character\Movement.cs" />
     <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
     <Compile Include="Assets\Scripts\UI\Stage.cs" />
+    <None Include="Assets\temp.txt" />
     <None Include="Assets\Audio\temp.txt" />
     <None Include="Assets\Prefabs\temp.txt" />
     <None Include="Assets\Scripts\temp.txt" />
