@@ -8,12 +8,6 @@ public class MonsterLogic : MonoBehaviour {
     SpriteRenderer renderer;
     protected const int ICOUNT_LEGNTH = 5;
     protected bool left { get; set; } // 벽에 부딫혔을 때 이동방향을 정해줌.
-               // Use this for initialization
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 29212966ad344bd181d831b991539183138bc341
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();

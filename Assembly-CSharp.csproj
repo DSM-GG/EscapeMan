@@ -65,10 +65,7 @@
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
-<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Monster\Corn.cs" />
-=======
->>>>>>> 29212966ad344bd181d831b991539183138bc341
     <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
@@ -82,7 +79,6 @@
     <None Include="Assets\Prefabs\temp.txt" />
     <None Include="Assets\Scripts\temp.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-<<<<<<< HEAD
       <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
@@ -93,18 +89,6 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-=======
-      <HintPath>C:/Users/chan/Desktop/코드/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/chan/Desktop/코드/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/chan/Desktop/코드/EscapeMan/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/chan/Desktop/코드/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
->>>>>>> 29212966ad344bd181d831b991539183138bc341
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
