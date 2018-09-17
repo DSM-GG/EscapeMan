@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class GreenRobot : MonsterLogic
 {
-    Animator animator;
     // Update is called once per frame
-    protected void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
     protected void FixedUpdate()
     {
         if (Player.transform.position.x - transform.position.x < ICOUNT_LEGNTH)
