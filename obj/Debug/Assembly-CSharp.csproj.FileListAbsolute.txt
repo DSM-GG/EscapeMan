@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\Temp\bin\Debug\Boo.Lang.dll
@@ -166,3 +167,7 @@ C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\obj\Debug\
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\obj\Debug\Assembly-CSharp.dll
 C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\obj\Debug\Assembly-CSharp.pdb
+=======
+C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+>>>>>>> master
