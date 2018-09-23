@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterLogic : MonoBehaviour {
+    public int MonsterHp;
     public GameObject Player;
     public bool incount;
     SpriteRenderer renderer;
-    protected const int ICOUNT_LEGNTH = 5;
+    public int ICOUNT_LEGNTH = 5;
     protected bool left { get; set; } // 벽에 부딫혔을 때 이동방향을 정해줌.
     private void Awake()
     {
@@ -26,6 +27,11 @@ public class MonsterLogic : MonoBehaviour {
             renderer.flipX = false;
             transform.Translate(Vector2.right * 0.1f);
         }
+    }
+
+    protected void Dead()
+    {
+            Destroy(this.gameObject);
     }
 
     protected bool getLeft()

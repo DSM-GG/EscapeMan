@@ -2,19 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Corn : MonsterLogic {
-    public SpriteRenderer CornRenderer;
+public class Chasing : MonsterLogic {
+    public SpriteRenderer MonsterRenderer;
+    bool Stop = false;
 
     private void Start()
     {
-        CornRenderer = GetComponent<SpriteRenderer>();
+        MonsterRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
         if (Player.transform.position.x - transform.position.x < ICOUNT_LEGNTH)
         {
-            Follow();
+            if(Stop == false)
+            {
+                Follow();
+            }
+
         }
         else
         {
@@ -27,12 +32,12 @@ public class Corn : MonsterLogic {
         if(Player.transform.position.x > this.transform.position.x)
         {
             transform.Translate(Vector2.right * 0.1f);
-            CornRenderer.flipX = false;
+            MonsterRenderer.flipX = false;
         }
         else
         {
             transform.Translate(Vector2.left * 0.1f);
-            CornRenderer.flipX = true;
+            MonsterRenderer.flipX = true;
         }
     }
 
@@ -49,10 +54,21 @@ public class Corn : MonsterLogic {
                 left = true;
             }
         }
+        if(other.gameObject.tag == "Player")
+        {
+            Stop = true;
+            StartCoroutine("ReCase");
+        }
     }
 
     public bool CallLeft()
     {
         return getLeft();
+    }
+
+    IEnumerator ReChase()
+    {
+        yield return new WaitForSeconds(3);
+        Stop = false;
     }
 }

@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class GreenRobot : MonsterLogic
 {
+    GameObject player;
+    public int distance;
+    public int GrRobotHp;
     Animator animator;
     // Update is called once per frame
+        
     protected void Start()
     {
+        player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
+        distance = GetComponent<MonsterLogic>().ICOUNT_LEGNTH;
+        GrRobotHp = GetComponent<MonsterLogic>().MonsterHp;
+        GrRobotHp = 3;
+        distance = 4;
     }
     protected void FixedUpdate()
     {
-        if (Player.transform.position.x - transform.position.x < ICOUNT_LEGNTH)
+        Dead();
+        if (Vector2.Distance(player.transform.position, transform.position) < distance)
         {
             incount = true;
         }
@@ -35,7 +45,13 @@ public class GreenRobot : MonsterLogic
                 left = true;
             }
         }
+        if (other.gameObject.tag == "Bullet")
+        {
+            GrRobotHp -= 1;
+        }
     }
+
+    
 
     public bool CallLeft()
     {
