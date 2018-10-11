@@ -3,19 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Egg : MonsterLogic {
-    public GameObject Eg;
-    public int EggHp;
+    public GameObject eg;
+    public int eggHp;
     Animator animator;
-    GameObject player;
     int distance;
-    bool incount;
     bool canAttack;
 	// Use this for initialization
 	void Start () {
-        EggHp = GetComponent<MonsterLogic>().MonsterHp;
-        EggHp = 2;
-        player = GameObject.Find("Player");
+        animator = GetComponent<Animator>();
+        eggHp = GetComponent<MonsterLogic>().monsterHp;
         distance = GetComponent<MonsterLogic>().ICOUNT_LEGNTH;
+        player = GameObject.Find("Player");
+        eg = transform.GetChild(0).gameObject;
+        canAttack = true;
+        eggHp = 2;
         distance = 2;
 	}
 	
@@ -23,10 +24,16 @@ public class Egg : MonsterLogic {
 	void Update ()
     {
         if (Vector2.Distance(player.transform.position, transform.position) < distance)
+        {
             incount = true;
+            Attack();
+        }
         else
+        {
             incount = false;
-        if(EggHp <= 0)
+            Move();
+        }
+        if (eggHp <= 0)
         {
             Dead();
         }
@@ -39,14 +46,16 @@ public class Egg : MonsterLogic {
 
     void Attack()
     {
-        if (incount == false)
+        if (incount == false) // 적 플레이어 incount 여부
             return;
-        if (canAttack == false)
+        if (canAttack == false) // 공격 재사용 대기시간
+            return;
+        if (transform.GetChild(0).GetComponent<Eg>().isBroken == false) // 달걀이 부서지지않으면 return;
             return;
 
         canAttack = false;
         animator.SetBool("isAttacked", true);
-        Instantiate(Eg, this.transform);
+        eg.SetActive(true);
         StartCoroutine("AttackCool");
     }
 
@@ -72,7 +81,7 @@ public class Egg : MonsterLogic {
         }
         if(other.gameObject.tag == "Bullet")
         {
-            EggHp -= 1;
+            eggHp -= 1;
         }
     }
 }

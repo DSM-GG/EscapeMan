@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class GreenRobot : MonsterLogic
 {
-    GameObject player;
     public int distance;
-    public int GrRobotHp;
-    Animator animator;
+    public int grRobotHp;
     // Update is called once per frame
         
     protected void Start()
     {
         player = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
         distance = GetComponent<MonsterLogic>().ICOUNT_LEGNTH;
-        GrRobotHp = GetComponent<MonsterLogic>().MonsterHp;
-        GrRobotHp = 3;
-        distance = 4;
+        grRobotHp = GetComponent<MonsterLogic>().monsterHp;
+        grRobotHp = 3;
     }
+
     protected void FixedUpdate()
     {
-        Dead();
+        if(grRobotHp == 0)
+            Dead();
         if (Vector2.Distance(player.transform.position, transform.position) < distance)
         {
             incount = true;
@@ -32,6 +30,7 @@ public class GreenRobot : MonsterLogic
             Move();
         }
     }
+
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.tag == "Wall")
@@ -47,11 +46,9 @@ public class GreenRobot : MonsterLogic
         }
         if (other.gameObject.tag == "Bullet")
         {
-            GrRobotHp -= 1;
+            grRobotHp -= 1;
         }
     }
-
-    
 
     public bool CallLeft()
     {

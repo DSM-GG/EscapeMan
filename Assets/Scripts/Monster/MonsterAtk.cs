@@ -14,7 +14,7 @@ public class MonsterAtk : MonoBehaviour
     void MakeBullet()
     {
         Bullets = new GameObject[BULLET_MAXSIZE];
-        for (int i = 0; i < BULLET_MAXSIZE; i++)
+        for (int i = 0; i < BULLET_MAXSIZE; i++) // 총알 프리팹을 생성해 줌.
         {
             Bullets[i] = Instantiate(BulletPrefab);
             Bullets[i].SetActive(false);

@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1540362429888058}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.0308633, y: -2.4670582, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,8 +71,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a6b0801d2940594f9811eb48f68dfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monsterHp: 0
+  monsterSpd: 0.1
+  player: {fileID: 0}
+  incount: 0
+  ICOUNT_LEGNTH: 5
   target: {fileID: 0}
   direction: {x: 0, y: 0}
+  distance: 0
 --- !u!212 &212610439628505720
 SpriteRenderer:
   m_ObjectHideFlags: 1

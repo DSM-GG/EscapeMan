@@ -67,11 +67,14 @@
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
     <Compile Include="Assets\Scripts\Monster\Bat.cs" />
     <Compile Include="Assets\Scripts\Monster\Chasing.cs" />
+    <Compile Include="Assets\Scripts\Monster\Eg.cs" />
     <Compile Include="Assets\Scripts\Monster\Egg.cs" />
+    <Compile Include="Assets\Scripts\Monster\Fan.cs" />
     <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
+    <Compile Include="Assets\Scripts\Monster\SmallEg.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
