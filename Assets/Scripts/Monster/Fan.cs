@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Fan : MonsterLogic {
+    public static int fanDmg = 10;
     GameObject rightAir;
     GameObject leftAir;
     Animator animator;
     int fanIncount;
-    int fanHP;
+    float fanHP;
 	// Use this for initialization
 	void Start () {
         rightAir = this.gameObject.transform.GetChild(0).gameObject;

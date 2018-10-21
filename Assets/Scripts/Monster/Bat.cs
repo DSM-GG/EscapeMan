@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bat : MonsterLogic {
+public class Bat : MonsterLogic
+{
+    public static int batDmg = 10;
     public Transform target;
     public Vector2 direction;
     public int distance;

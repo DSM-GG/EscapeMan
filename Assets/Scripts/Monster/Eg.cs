@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Eg : MonoBehaviour {
+    public static int egDmg = 10;
     public GameObject smallEg;
     public bool isBroken;
 	// Update is called once per frame

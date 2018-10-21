@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114464045704867094}
   m_Layer: 0
   m_Name: "\uC54C\uAE4C\uAE30\uC7A5\uC778Moving"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,7 +139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f9db4c3259bfe439122019f4bc546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SmallEg: {fileID: 1754768975352212, guid: 49e9d8c2ce99902488b0c7806020bdae, type: 2}
+  smallEg: {fileID: 0}
+  isBroken: 0
 --- !u!114 &114464045704867094
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,12 +152,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebf8fe4a84c1fa74cb82c9d9d11d9787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MonsterHp: 0
-  Player: {fileID: 0}
+  monsterHp: 0
+  monsterSpd: 0.1
+  player: {fileID: 0}
   incount: 0
   ICOUNT_LEGNTH: 5
-  Eg: {fileID: 1952895372876142, guid: 542307ad6b707e1469e42fee47db911a, type: 2}
-  EggHp: 0
+  eg: {fileID: 0}
+  eggHp: 0
 --- !u!212 &212404381320209528
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114580507113245024}
   m_Layer: 0
   m_Name: Eg
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,8 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f9db4c3259bfe439122019f4bc546a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Egrigidbody2D: {fileID: 0}
-  SmallEg: {fileID: 1754768975352212, guid: 49e9d8c2ce99902488b0c7806020bdae, type: 2}
+  smallEg: {fileID: 0}
+  isBroken: 0
 --- !u!212 &212544924350721440
 SpriteRenderer:
   m_ObjectHideFlags: 1

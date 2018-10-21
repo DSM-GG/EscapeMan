@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Egg : MonsterLogic {
+    public static int eggDmg = 10;
     public GameObject eg;
-    public int eggHp;
+    public float eggHp;
     Animator animator;
     int distance;
     bool canAttack;
@@ -38,11 +39,6 @@ public class Egg : MonsterLogic {
             Dead();
         }
 	}
-
-    private void FixedUpdate()
-    {
-        Attack();
-    }
 
     void Attack()
     {
@@ -78,10 +74,6 @@ public class Egg : MonsterLogic {
             {
                 left = true;
             }
-        }
-        if(other.gameObject.tag == "Bullet")
-        {
-            eggHp -= 1;
         }
     }
 }

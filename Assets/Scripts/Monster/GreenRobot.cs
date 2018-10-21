@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GreenRobot : MonsterLogic
 {
+    public static int greenRobotDmg = 10;
     public int distance;
-    public int grRobotHp;
+    public float grRobotHp;
     // Update is called once per frame
         
     protected void Start()

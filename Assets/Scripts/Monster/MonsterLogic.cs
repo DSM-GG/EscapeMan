@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MonsterLogic : MonoBehaviour {
-    public int monsterHp;
+    public float monsterHp;
     public float monsterSpd = 0.1f;
     public GameObject player;
     public bool incount;
@@ -38,5 +38,10 @@ public class MonsterLogic : MonoBehaviour {
     protected bool getLeft()
     {
         return left;
+    }
+
+    public void Damaged(float dmg)
+    {
+        this.monsterHp -= dmg;
     }
 }
