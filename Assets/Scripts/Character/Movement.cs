@@ -30,6 +30,8 @@ public class Movement : MonoBehaviour {
         moveSpeed = character.speed;
         jumpPower = character.jumpPower;
         slidingPower = character.slidingPower;
+
+        direction = Vector3.right;
     }
 	
 	// Update is called once per frame
@@ -75,6 +77,9 @@ public class Movement : MonoBehaviour {
 
     void Jump()
     {
+        // 추락 시 추락 애니메이션 구현 혹은
+        // 점프 애니메이션 수행 후 추락 애니메이션으로 전이할 것.
+
         if (isSliding)
             return;
 

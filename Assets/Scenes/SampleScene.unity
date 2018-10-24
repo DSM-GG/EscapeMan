@@ -263,17 +263,21 @@ Prefab:
       propertyPath: Player
       value: 
       objectReference: {fileID: 510901454}
+    - target: {fileID: 1659051245811954, guid: 5bc23f02e8b354343b86f9dd709bfbb9, type: 2}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5bc23f02e8b354343b86f9dd709bfbb9, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &510901454 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1841891950239992, guid: 335014c5160786a4aa74a55a2ab28f9a,
+  m_CorrespondingSourceObject: {fileID: 1105418607553496, guid: 37fc6cc2a5513ef4084e023e122b33f7,
     type: 2}
   m_PrefabInternal: {fileID: 1320483091}
 --- !u!4 &510901457 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a,
+  m_CorrespondingSourceObject: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7,
     type: 2}
   m_PrefabInternal: {fileID: 1320483091}
 --- !u!1 &519420028
@@ -792,44 +796,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4717595358646870, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+    - target: {fileID: 4233223639820686, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1841891950239992, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
-      propertyPath: m_Name
-      value: RockMan
+    - target: {fileID: 1105418607553496, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 335014c5160786a4aa74a55a2ab28f9a, type: 2}
+  m_SourcePrefab: {fileID: 100100000, guid: 37fc6cc2a5513ef4084e023e122b33f7, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1658006230
 GameObject:

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
 
-    const int MAX_BULLET = 50;  // 총알 최대 수 
+    const int MAX_BULLET = 5;  // 총알 최대 수 
 
     public GameObject bullet_prefab;
 
@@ -35,9 +35,14 @@ public class Attack : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Z))
         {
             Bullet bullet = GetFreeBullet();
+
+            // 여유총알이 남아있지 않다면 아무것도 하지 않는다.
+            if (bullet == null)
+                return;
+
             bullet.Move(movement.direction, transform.position);
             currentShoot = true;
-            Debug.Log("Fire");
+            //Debug.Log("Fire");
 
             animator.SetBool("isAttacking", true);
         }

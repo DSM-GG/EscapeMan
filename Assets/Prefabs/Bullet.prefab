@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114528909353322306}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -91,6 +91,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   bullet_speed: 3
+  bullet_damage: 3
+  bullet_Distance: 2
 --- !u!212 &212635184188599366
 SpriteRenderer:
   m_ObjectHideFlags: 1

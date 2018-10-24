@@ -14,7 +14,6 @@ public class Character : MonoBehaviour {
     public float speed;
     public int status;
     public int score;
-    public float bulletSpeed;
     public float jumpPower;     // 점프 크기 
     public float slidingPower;
     public float slidingCoolTime;
@@ -29,4 +28,14 @@ public class Character : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    void Damaged(float damage)
+    {
+        hp -= damage;
+
+        if (hp <= 0)
+        {
+
+        }
+    }
 }
