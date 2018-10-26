@@ -78,7 +78,7 @@ public class Fan : MonsterLogic {
         }
         if (other.gameObject.tag == "Bullet")
         {
-            fanHP -= 1;
+
         }
     }
 
