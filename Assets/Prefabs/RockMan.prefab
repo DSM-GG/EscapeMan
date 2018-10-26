@@ -121,10 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e376a62be9336d4594834d436dafcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fade_sec: 0
   hp: 0
   life: 0
   damage: 0
   speed: 1.5
+  ladderSpeed: 0.05
   status: 0
   score: 0
   jumpPower: 3

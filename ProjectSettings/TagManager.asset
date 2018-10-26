@@ -8,6 +8,7 @@ TagManager:
   - Platform
   - Enemy
   - Bullet
+  - Ladder
   layers:
   - Default
   - TransparentFX

@@ -32,8 +32,12 @@ public class Attack : MonoBehaviour {
     void Fire()
     {
         // Z키 입력 시 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown("z"))
         {
+            // 슬라이딩중이면 공격을 하지 않는다.
+            if (movement.IsSliding())
+                return;
+
             Bullet bullet = GetFreeBullet();
 
             // 여유총알이 남아있지 않다면 아무것도 하지 않는다.
@@ -87,12 +91,10 @@ public class Attack : MonoBehaviour {
         if(!currentShoot)
         {
             animator.SetBool("isAttacking", false);
-            Debug.Log("CLOSE");
             isChecking = false;
-            yield return null;
+            //yield return null;
         }
 
-        Debug.Log("CLOSE2");
         isChecking = false;
     }
 }

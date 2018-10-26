@@ -6,12 +6,14 @@ public class Movement : MonoBehaviour {
     float moveSpeed;            // 이동 속도
     float jumpPower;            // 점프 크기 
     float slidingPower;         // 슬라이딩 크기
+    float ladderSpeed;          // 사다리 오르는 속도
     public Vector3 direction;
 
+    bool isClimbing = false;
     bool isGrounded = true;     // 착지 상태
     bool isJumped = false;      // 캐릭터의 점프 상태 
     bool isSliding = false;     // 캐릭터의 슬라이딩 상태
-
+    bool isLadder = false;
     bool isSlideCool = false;
 
     Animator animator;          
@@ -19,14 +21,20 @@ public class Movement : MonoBehaviour {
     Rigidbody2D rb;
     Character character;
 
-	// Use this for initialization
-	void Awake () {
+    Vector3 ladder_velocity;
+    float ladderPosX;
+
+    // Use this for initialization
+    void Awake () {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
-        direction = new Vector3();
         character = GetComponent<Character>();
 
+        direction = new Vector3();
+        ladder_velocity = new Vector3();
+
+        ladderSpeed = character.ladderSpeed;
         moveSpeed = character.speed;
         jumpPower = character.jumpPower;
         slidingPower = character.slidingPower;
@@ -43,6 +51,7 @@ public class Movement : MonoBehaviour {
 
     void InputMovement()
     {
+        // 슬라이딩 중에는 이동 입력 X
         if (isSliding)
             return;
 
@@ -54,6 +63,9 @@ public class Movement : MonoBehaviour {
             animator.SetBool("isWalking", true);    // 애니메이션 실행
 
             // 위에서 정해진 방향으로 속도를 곱하여 위치 값을 변화시킨다.
+
+            if (isClimbing) return;
+
             Vector3 v = new Vector3(direction.x * moveSpeed * Time.deltaTime, 0, 0);
             transform.position += v;
         }
@@ -64,11 +76,38 @@ public class Movement : MonoBehaviour {
             sr.flipX = false;                       // 스프라이트 방향을 오른쪽으로 돌린다.
             animator.SetBool("isWalking", true);    // 애니메이션 실행
 
+            if (isClimbing) return;
+
             // 위에서 정해진 방향으로 속도를 곱하여 위치 값을 변화시킨다.
             Vector3 v = new Vector3(direction.x * moveSpeed * Time.deltaTime, 0, 0);
             transform.position += v;
         }
-        // 이동 X
+        else if(isLadder)
+        {
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                isClimbing = true;
+                rb.isKinematic = true;
+                ladder_velocity.y = ladderSpeed * 1;
+                transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
+
+                transform.position += ladder_velocity;
+            }
+            else if (!isGrounded && Input.GetKey(KeyCode.DownArrow))
+            {
+                isClimbing = true;
+                rb.isKinematic = true;
+                ladder_velocity.y = ladderSpeed * -1;
+                transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
+
+                transform.position += ladder_velocity;
+            }
+            else if (isGrounded)
+            {
+                rb.isKinematic = false;
+                isClimbing = false;
+            }
+        }
         else
         {
             animator.SetBool("isWalking", false);   // 애니메이션 종료
@@ -105,7 +144,7 @@ public class Movement : MonoBehaviour {
     {
         // 현재 바라보고 있는 방향을 향해서
         // 슬라이딩을 한다.
-        if(!isSliding && Input.GetKeyDown(KeyCode.LeftShift))
+        if (!isSliding && Input.GetKeyDown(KeyCode.LeftShift))
         {
             animator.SetTrigger("slidingTrigger");
             isSliding = true;
@@ -113,7 +152,7 @@ public class Movement : MonoBehaviour {
             rb.AddForce(slideDir, ForceMode2D.Impulse);
         }
         // 만약 슬라이딩 중 & 쿨타임을 안돌리고 있는 상황이면
-        else if(isSliding & !isSlideCool)
+        else if (isSliding & !isSlideCool)
         {
             // 쿨타임을 돌린다. 
             isSlideCool = true;
@@ -137,5 +176,19 @@ public class Movement : MonoBehaviour {
     public void SetGrounded(bool val)
     {
         isGrounded = val;
+    }
+
+    public bool IsSliding()
+    {
+        return isSliding;
+    }
+
+    public void SetLadder(bool val, float posX)
+    {
+        isLadder = val;
+        ladderPosX = posX;
+
+        if (!isLadder)
+            rb.isKinematic = false;
     }
 }

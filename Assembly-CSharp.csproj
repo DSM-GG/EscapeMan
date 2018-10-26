@@ -65,8 +65,12 @@
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Character\GroundChecker.cs" />
+    <Compile Include="Assets\Scripts\Character\Ladder.cs" />
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
     <Compile Include="Assets\Scripts\Character\RayCaster.cs" />
+    <Compile Include="Assets\Scripts\Character\TestCode.cs" />
+    <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />

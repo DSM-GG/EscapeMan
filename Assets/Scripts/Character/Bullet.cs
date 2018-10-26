@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour {
     public float bullet_damage;
     public float bullet_Distance;
     public WaitForSeconds bullet_Wait_second;
-    const float BULLET_MAX_TIME = 0.5f;
+    const float BULLET_MAX_TIME = 1.5f;
 
     float originX;
 
