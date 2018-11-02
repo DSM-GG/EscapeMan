@@ -66,7 +66,6 @@
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Character\GroundChecker.cs" />
-    <Compile Include="Assets\Scripts\Character\Ladder.cs" />
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
     <Compile Include="Assets\Scripts\Character\RayCaster.cs" />
     <Compile Include="Assets\Scripts\Character\TestCode.cs" />
@@ -75,6 +74,7 @@
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
+    <Compile Include="Assets\Scripts\Tile\Ladder.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />

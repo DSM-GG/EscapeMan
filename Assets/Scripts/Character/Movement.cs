@@ -13,11 +13,12 @@ public class Movement : MonoBehaviour {
     bool isGrounded = true;     // 착지 상태
     bool isJumped = false;      // 캐릭터의 점프 상태 
     bool isSliding = false;     // 캐릭터의 슬라이딩 상태
-    bool isLadder = false;
+    bool isUpLadder = false;
+    bool isDownLadder = false;
     bool isSlideCool = false;
 
-    Animator animator;          
-    SpriteRenderer sr;          
+    Animator animator;
+    SpriteRenderer sr;
     Rigidbody2D rb;
     Character character;
 
@@ -25,7 +26,7 @@ public class Movement : MonoBehaviour {
     float ladderPosX;
 
     // Use this for initialization
-    void Awake () {
+    void Awake() {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -41,13 +42,13 @@ public class Movement : MonoBehaviour {
 
         direction = Vector3.right;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
         Jump();
         Sliding();
         InputMovement();
-	}
+    }
 
     void InputMovement()
     {
@@ -82,34 +83,31 @@ public class Movement : MonoBehaviour {
             Vector3 v = new Vector3(direction.x * moveSpeed * Time.deltaTime, 0, 0);
             transform.position += v;
         }
-        else if(isLadder)
+        // 사다리 위로 이동
+        else if (isUpLadder && Input.GetKey(KeyCode.UpArrow))
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-                isClimbing = true;
-                rb.isKinematic = true;
-                ladder_velocity.y = ladderSpeed * 1;
-                transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
+            isClimbing = true;
+            rb.isKinematic = true;
+            ladder_velocity.y = ladderSpeed * 1;
+            transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
 
-                transform.position += ladder_velocity;
-            }
-            else if (!isGrounded && Input.GetKey(KeyCode.DownArrow))
-            {
-                isClimbing = true;
-                rb.isKinematic = true;
-                ladder_velocity.y = ladderSpeed * -1;
-                transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
+            animator.SetBool("isClimbing", true);
+            transform.position += ladder_velocity;
+        }
+        // 사다리 아래로 이동
+        else if (isDownLadder && Input.GetKey(KeyCode.DownArrow))
+        {
+            isClimbing = true;
+            rb.isKinematic = true;
+            ladder_velocity.y = ladderSpeed * -1;
+            transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
 
-                transform.position += ladder_velocity;
-            }
-            else if (isGrounded)
-            {
-                rb.isKinematic = false;
-                isClimbing = false;
-            }
+            animator.SetBool("isClimbing", true);
+            transform.position += ladder_velocity;
         }
         else
         {
+            animator.SetBool("isClimbing", false);
             animator.SetBool("isWalking", false);   // 애니메이션 종료
         }
     }
@@ -163,6 +161,7 @@ public class Movement : MonoBehaviour {
     IEnumerator SlideTimer()
     {
         yield return new WaitForSeconds(0.5f);
+        // 슬라이딩 시간이 지난 후, 쿨타임을 초기화 한다.
         isSliding = false;
         isSlideCool = false;
         animator.ResetTrigger("SlidingTrigger");
@@ -183,12 +182,57 @@ public class Movement : MonoBehaviour {
         return isSliding;
     }
 
+    public bool IsClimbing()
+    {
+        return isClimbing;
+    }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public void SetUpLadder(bool val, float posX)
+    {
+        ladderPosX = posX;
+        isUpLadder = val;
+        if (!val)
+        {
+            Debug.Log("TurnOff");
+            isClimbing = false;
+            isGrounded = true;
+            rb.isKinematic = false;
+        }
+        else
+            Debug.Log("TurnOn");
+    }
+
+    public void SetDownLadder(bool val, float posX)
+    {
+        ladderPosX = posX;
+        isDownLadder = val;
+
+        if (isDownLadder)
+            Debug.Log("Can go to the down");
+        else
+        {
+            if (!isUpLadder)
+            {
+                isClimbing = false;
+                isGrounded = true;
+                rb.isKinematic = false;
+            }
+        }
+    }
+
     public void SetLadder(bool val, float posX)
     {
-        isLadder = val;
-        ladderPosX = posX;
-
-        if (!isLadder)
+        Debug.Log("GOod");
+        if(!val)
+        {
+            isClimbing = false;
+            isGrounded = true;
             rb.isKinematic = false;
+        }
     }
 }
