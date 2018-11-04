@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: 7b2a706782568b7498645d63ab812f4e
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tong_std_0
+    21300002: tong_std_1
+    21300004: tong_std_2
+    21300006: tong_std_3
+    21300008: tong_std_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +45,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +74,120 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tong_std_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 81
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbf763f0ce71a04c87ddc39d6217dd6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tong_std_1
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 1
+        width: 80
+        height: 65
+      alignment: 9
+      pivot: {x: 0.47219294, y: 0.5213901}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9fd2cdc3a17ee4da6fabb5c33a3f65
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tong_std_2
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 2
+        width: 80
+        height: 64
+      alignment: 9
+      pivot: {x: 0.47781467, y: 0.5336281}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91629f6653015674eb74a53e712baf08
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tong_std_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 1
+        width: 80
+        height: 65
+      alignment: 9
+      pivot: {x: 0.47219276, y: 0.54278016}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21277889e85524549b3b8bcee101cb96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tong_std_4
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 2
+        width: 79
+        height: 64
+      alignment: 9
+      pivot: {x: 0.46480125, y: 0.5173794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46db83295d6ed914d806e81fff0d33e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

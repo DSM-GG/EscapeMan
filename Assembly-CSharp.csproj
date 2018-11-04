@@ -61,6 +61,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
+    <Compile Include="Assets\Scripts\2.0\Shoot.cs" />
     <Compile Include="Assets\Scripts\Character\Attack.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
