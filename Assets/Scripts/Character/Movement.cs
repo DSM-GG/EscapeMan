@@ -63,10 +63,11 @@ public class Movement : MonoBehaviour {
             sr.flipX = true;                        // 스프라이트 방향을 왼쪽으로 돌린다
             animator.SetBool("isWalking", true);    // 애니메이션 실행
 
-            // 위에서 정해진 방향으로 속도를 곱하여 위치 값을 변화시킨다.
 
+            // 사다리를 오르고 있는 상태라면 좌우 이동을 무시한다.
             if (isClimbing) return;
 
+            // 위에서 정해진 방향으로 속도를 곱하여 위치 값을 변화시킨다.
             Vector3 v = new Vector3(direction.x * moveSpeed * Time.deltaTime, 0, 0);
             transform.position += v;
         }
@@ -77,6 +78,7 @@ public class Movement : MonoBehaviour {
             sr.flipX = false;                       // 스프라이트 방향을 오른쪽으로 돌린다.
             animator.SetBool("isWalking", true);    // 애니메이션 실행
 
+            // 사다리를 오르고 있는 상태라면 좌우 이동을 무시한다.
             if (isClimbing) return;
 
             // 위에서 정해진 방향으로 속도를 곱하여 위치 값을 변화시킨다.
@@ -87,6 +89,7 @@ public class Movement : MonoBehaviour {
         else if (isUpLadder && Input.GetKey(KeyCode.UpArrow))
         {
             isClimbing = true;
+            // rigidbody2D의 중력을 잠시 꺼둔다.
             rb.isKinematic = true;
             ladder_velocity.y = ladderSpeed * 1;
             transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
@@ -98,6 +101,7 @@ public class Movement : MonoBehaviour {
         else if (isDownLadder && Input.GetKey(KeyCode.DownArrow))
         {
             isClimbing = true;
+            // rigidbody2D의 중력을 잠시 꺼둔다.
             rb.isKinematic = true;
             ladder_velocity.y = ladderSpeed * -1;
             transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
@@ -114,14 +118,13 @@ public class Movement : MonoBehaviour {
 
     void Jump()
     {
-        // 추락 시 추락 애니메이션 구현 혹은
-        // 점프 애니메이션 수행 후 추락 애니메이션으로 전이할 것.
+        Debug.Log("IsGrounded : " + isGrounded);
 
         if (isSliding)
             return;
 
         // 점프해서 착지했다면 
-        if (isGrounded)
+        if (isGrounded && isJumped)
         {
             isJumped = false;   // 점프 확인 변수 = false
             animator.SetTrigger("isGrounded");
@@ -198,28 +201,22 @@ public class Movement : MonoBehaviour {
         isUpLadder = val;
         if (!val)
         {
-            Debug.Log("TurnOff");
+            animator.SetTrigger("isGrounded");
             isClimbing = false;
-            isGrounded = true;
             rb.isKinematic = false;
         }
-        else
-            Debug.Log("TurnOn");
     }
 
     public void SetDownLadder(bool val, float posX)
     {
         ladderPosX = posX;
         isDownLadder = val;
-
-        if (isDownLadder)
-            Debug.Log("Can go to the down");
-        else
+        
+        if(!isDownLadder)
         {
             if (!isUpLadder)
             {
                 isClimbing = false;
-                isGrounded = true;
                 rb.isKinematic = false;
             }
         }
@@ -227,9 +224,9 @@ public class Movement : MonoBehaviour {
 
     public void SetLadder(bool val, float posX)
     {
-        Debug.Log("GOod");
         if(!val)
         {
+            animator.SetTrigger("isGrounded");
             isClimbing = false;
             isGrounded = true;
             rb.isKinematic = false;

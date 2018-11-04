@@ -28,11 +28,11 @@ public class RayCaster : MonoBehaviour {
     void GroundCheck()
     {
         // 캐릭터가 현재 사다리를 오르고 있다면 레이캐스트 X
-        //if (movement.IsClimbing())
-        //{
-        //    movement.SetGrounded(false);
-        //    return;
-        //}
+        if (movement.IsClimbing())
+        {
+            // movement.SetGrounded(false);
+            return;
+        }
 
         float te = transform.localScale.x / 10;
         RaycastHit2D[] hit;
@@ -46,12 +46,10 @@ public class RayCaster : MonoBehaviour {
         {
             // y축에 대한 캐릭터의 속도가 0이고 플랫폼에 닿아있는 상태면 
             if (elem.transform.tag == "Platform" && transform.GetComponentInParent<Rigidbody2D>().velocity.y == 0)
-            {
-                bSum = bSum | true;
+            { 
+                bSum = true;
                 break;
             }
-            else
-                bSum = bSum | false;
         }
 
         v.Set(transform.position.x + te, transform.position.y, transform.position.z);
@@ -62,11 +60,9 @@ public class RayCaster : MonoBehaviour {
             // y축에 대한 캐릭터의 속도가 0이고 플랫폼에 닿아있는 상태면 
             if (elem.transform.tag == "Platform" && transform.GetComponentInParent<Rigidbody2D>().velocity.y == 0)
             {
-                bSum = bSum | true;
+                bSum = true;
                 break;
             }
-            else
-                bSum = bSum | false;
         }
         movement.SetGrounded(bSum);
     }
@@ -84,7 +80,6 @@ public class RayCaster : MonoBehaviour {
         {
             if (elem.transform.tag == "Ladder")
             {
-                Debug.Log("ASD");
                 temp = true;
             }
         }
@@ -111,7 +106,6 @@ public class RayCaster : MonoBehaviour {
         Gizmos.DrawRay(asd, Vector2.down * groundDist);  
         asd = new Vector3(transform.position.x + te, transform.position.y, transform.position.z);
         Gizmos.DrawRay(asd, Vector2.down * groundDist);
-        //Gizmos.DrawRay(transform.position, Vector2.down * groundDist);
 
         Vector3 temp = transform.position;
         // UP
@@ -121,7 +115,6 @@ public class RayCaster : MonoBehaviour {
         // Down
         temp.Set(temp.x, transform.position.y + height - minus2, temp.z);
         Gizmos.DrawRay(temp, Vector2.down * ( (groundDist * 2) - 0.05f));
-        //Gizmos.DrawRay(transform.position, Vector2.up * (groundDist - 0.1f));
     }
 
 }
