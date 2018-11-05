@@ -6,7 +6,9 @@ public class MonsterLogic2 : MonoBehaviour {
     public float monsterHp;
     public float monsterSpd;
     public int incountLength;
-    protected bool left; // 왼쪽을 향할 때 true
+    public Vector3 vecLeft = new Vector3 (-1, 0, 0);
+    public Vector3 vecRight = new Vector3(1, 0, 0);
+    public bool left; // 왼쪽을 향할 때 true
     protected bool isIncount;
     protected bool playerIsLeft;
 
@@ -36,13 +38,13 @@ public class MonsterLogic2 : MonoBehaviour {
     {
         if(left.Equals(true))
         {
-            spriteRenderer.flipX.Equals(true);
-            transform.position = new Vector3(-0.1f * monsterSpd, 0, 0);
+            spriteRenderer.flipX = true;
+            transform.position += vecLeft;
         }
         else
         {
-            spriteRenderer.flipX.Equals(false);
-            transform.position = new Vector3(0.1f * monsterSpd, 0, 0);
+            spriteRenderer.flipX = false;
+            transform.position += vecRight;
         }
     }
 

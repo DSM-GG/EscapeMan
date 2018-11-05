@@ -49,7 +49,7 @@ public class MonsterAtk : MonoBehaviour
                     if (Bullets[i].activeSelf == false)
                     {
                         StartCoroutine("CoolTime");
-                        Bullets[i].GetComponent<MonsterBullet>().Shoot(this.transform, greenRobot.CallLeft());
+                        //Bullets[i].GetComponent<MonsterBullet>().Shoot(this.transform, greenRobot.CallLeft());
                         break;
                     }
                 }

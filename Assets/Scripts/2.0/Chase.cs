@@ -4,26 +4,33 @@ using UnityEngine;
 
 public class Chase : MonsterLogic2
 {
+    bool atkCool = true;
+    public GameObject LeftObser;
+    public GameObject RightObser;
+    
     private void Update()
     {
-        IsClose(Vector2.Distance(transform.position, player.gameObject.transform.position));
-        Chasing(isIncount);
+        PlayerCheck();
     }
 
-    void IsClose(float dis)
+    void PlayerCheck()
     {
-        if (dis <= incountLength)
-            isIncount = true;
+        if (LeftObser.GetComponent<Observer>().Incount == true || RightObser.GetComponent<Observer>().Incount == true)
+        {
+
+        }
     }
 
-    void Chasing(bool isIncount)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if(isIncount == false)
-            return;
+        if (other.gameObject.tag.Equals("Player"))
+            AtkCool();
+    }
 
-        if(playerIsLeft == false)
-            left = false;
-        else
-            left = true;
+    IEnumerator AtkCool()
+    {
+        atkCool = false; 
+        yield return new WaitForSeconds(3);
+        atkCool = true;
     }
 }

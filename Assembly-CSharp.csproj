@@ -62,7 +62,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\Scripts\2.0\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
+    <Compile Include="Assets\Scripts\2.0\Observer.cs" />
     <Compile Include="Assets\Scripts\2.0\Shoot.cs" />
     <Compile Include="Assets\Scripts\Character\Attack.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
@@ -77,7 +79,6 @@
     <Compile Include="Assets\Scripts\Monster\Ice.cs" />
     <Compile Include="Assets\Scripts\Monster\IceBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
     <Compile Include="Assets\Scripts\Monster\SmallEg.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />

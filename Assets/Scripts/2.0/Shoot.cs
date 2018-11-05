@@ -25,21 +25,35 @@ public class Shoot : MonsterLogic2 {
 
     private void Update()
     {
-        Fire(isIncount);
+        ShootBullet(isIncount);
     }
 
-    private void Fire(bool incount)
+    private void ShootBullet(bool incount)
     {
         if (incount == false)
             return;
 
+        Bullet bullet = GetFreeBullet();
+
         if(playerIsLeft == true)
         {
-
+            bullet.Move(new Vector2(-1, 0), this.gameObject.transform.position);
         }
         else
         {
-
+            bullet.Move(new Vector2(1, 0), this.gameObject.transform.position);
         }
+    }
+
+    Bullet GetFreeBullet()
+    {
+        for(int i = 0; i < bullets_number; i++)
+        {
+            if(bullets[i].activeSelf == false)
+            {
+                return bullets[i].GetComponent<Bullet>();
+            }
+        }
+        return null;
     }
 }
