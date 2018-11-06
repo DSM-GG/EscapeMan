@@ -47,6 +47,10 @@ public class Bullet : MonoBehaviour {
             StopCoroutine("BulletTimer");
             gameObject.SetActive(false);
         }
+        else if(collision.tag == "Platform")
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     // 시간을 재서 총알을 끄는 코루틴
