@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Attack : MonoBehaviour {
 
-    const int MAX_BULLET = 5;  // 총알 최대 수 
+    public int maxBullet = 10;  // 총알 최대 수 
 
     public GameObject bullet_prefab;
 
@@ -17,7 +17,7 @@ public class Attack : MonoBehaviour {
     // Use this for initialization
     void Start () {
         animator = GetComponent<Animator>();
-        bullets = new GameObject[MAX_BULLET];
+        bullets = new GameObject[maxBullet];
         movement = GetComponent<Movement>();
 
         CreateBullet();
@@ -63,7 +63,7 @@ public class Attack : MonoBehaviour {
     // 현재 비활성화인 총알을 반환.
     Bullet GetFreeBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
+        for(int i = 0; i < maxBullet; ++i)
         {         
             if(bullets[i].activeSelf == false)
             {
@@ -76,7 +76,7 @@ public class Attack : MonoBehaviour {
     // 초기 총알들을 생성한다. 
     void CreateBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
+        for(int i = 0; i < maxBullet; ++i)
         {
             bullets[i] = Instantiate(bullet_prefab);
             bullets[i].SetActive(false);

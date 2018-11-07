@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
     <Compile Include="Assets\Scripts\Tile\Ladder.cs" />
+    <Compile Include="Assets\Scripts\UI\Character_UI.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
