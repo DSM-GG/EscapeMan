@@ -91,12 +91,12 @@ TextureImporter:
       name: "FAN - \uBCF5\uC0AC\uBCF8_0"
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 204.25
+        width: 204
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -111,12 +111,12 @@ TextureImporter:
       name: "FAN - \uBCF5\uC0AC\uBCF8_1"
       rect:
         serializedVersion: 2
-        x: 204
+        x: 201
         y: 0
-        width: 204.25
+        width: 204
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -131,12 +131,12 @@ TextureImporter:
       name: "FAN - \uBCF5\uC0AC\uBCF8_2"
       rect:
         serializedVersion: 2
-        x: 408
+        x: 398
         y: 0
-        width: 204.25
+        width: 204
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -151,12 +151,12 @@ TextureImporter:
       name: "FAN - \uBCF5\uC0AC\uBCF8_3"
       rect:
         serializedVersion: 2
-        x: 612
+        x: 603
         y: 0
-        width: 204.25
+        width: 204
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

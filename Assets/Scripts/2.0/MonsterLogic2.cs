@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class MonsterLogic2 : MonoBehaviour {
     public float monsterHp;
-    public float monsterSpd;
     protected bool left; // 왼쪽을 향할 때 true
     protected bool playerIsLeft; // 몬스터기준 플레이어 위치
-
+    
     public Vector3 vecLeft = new Vector3 (-1, 0, 0);
     public Vector3 vecRight = new Vector3(1, 0, 0);
     public GameObject player;
@@ -16,6 +15,8 @@ public class MonsterLogic2 : MonoBehaviour {
     protected bool Rincount;
     protected bool Lincount;
     protected bool isIncount;
+    private bool isDead = false;
+    private bool Stop = false;
 
     private void Awake()
     {
@@ -32,6 +33,7 @@ public class MonsterLogic2 : MonoBehaviour {
     {
         Rincount = transform.GetChild(0).GetChild(0).gameObject.GetComponent<Observer>().Incount;
         Lincount = transform.GetChild(0).GetChild(1).gameObject.GetComponent<Observer>().Incount;
+
         if (Rincount == true || Lincount == true)
             isIncount = true;
 
@@ -39,11 +41,16 @@ public class MonsterLogic2 : MonoBehaviour {
             playerIsLeft = false;
         else
             playerIsLeft = true;
+
+        if (monsterHp <= 0)
+            StartCoroutine("MonsterDying");
     }
 
-    protected void Move() // 몬스터 단순 이동
+    virtual protected void Move() // 몬스터 단순 이동
     {
         if (Rincount == true || Lincount == true) // 플레이어가 공격범위 or 추적범위 진입시 기본 이동은 금지.
+            return;
+        if (isDead == true)
             return;
 
         if(left == true)
@@ -74,5 +81,16 @@ public class MonsterLogic2 : MonoBehaviour {
                     left = true;
                 break;
         }
+    }
+
+    IEnumerator MonsterDying()
+    {
+        isDead = true;
+        for(int i = 0; i < 10; i++)
+        {
+            spriteRenderer.color = new Color(1, 1, 1, 1.0f - 0.1f * i);
+            yield return new WaitForSeconds(0.05f);
+        }
+        Destroy(this.gameObject);
     }
 }

@@ -63,6 +63,8 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\2.0\Chase.cs" />
     <Compile Include="Assets\Scripts\2.0\Monster\Robot.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Tire.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Trackter.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
     <Compile Include="Assets\Scripts\2.0\Observer.cs" />
@@ -71,24 +73,12 @@
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
-    <Compile Include="Assets\Scripts\Monster\Bat.cs" />
-    <Compile Include="Assets\Scripts\Monster\Chasing.cs" />
-    <Compile Include="Assets\Scripts\Monster\Eg.cs" />
-    <Compile Include="Assets\Scripts\Monster\Egg.cs" />
-    <Compile Include="Assets\Scripts\Monster\Fan.cs" />
-    <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
-    <Compile Include="Assets\Scripts\Monster\Ice.cs" />
-    <Compile Include="Assets\Scripts\Monster\IceBullet.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
-    <Compile Include="Assets\Scripts\Monster\SmallEg.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
     <Compile Include="Assets\Scripts\UI\Stage.cs" />
     <None Include="Assets\temp.txt" />
     <None Include="Assets\Audio\temp.txt" />
-    <None Include="Assets\Prefabs\temp.txt" />
     <None Include="Assets\Scripts\temp.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

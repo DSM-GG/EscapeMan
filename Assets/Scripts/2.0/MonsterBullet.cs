@@ -19,4 +19,15 @@ public class MonsterBullet : MonoBehaviour {
         gameObject.SetActive(true);
         rig.AddForce(dir * speed, ForceMode2D.Impulse);
     }
+
+    IEnumerator Reset()
+    {
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        gameObject.SetActive(false);
+    }
 }
