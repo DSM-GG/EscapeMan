@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Robot.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
     <Compile Include="Assets\Scripts\2.0\Observer.cs" />

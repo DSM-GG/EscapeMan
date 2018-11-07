@@ -4,33 +4,53 @@ using UnityEngine;
 
 public class Chase : MonsterLogic2
 {
-    bool atkCool = true;
+    public bool attackedPlayer = false;
     public GameObject LeftObser;
     public GameObject RightObser;
-    
+
     private void Update()
     {
         PlayerCheck();
+        Chasing();
     }
 
     void PlayerCheck()
     {
-        if (LeftObser.GetComponent<Observer>().Incount == true || RightObser.GetComponent<Observer>().Incount == true)
+        if (LeftObser.GetComponent<Observer>().Incount == true)
         {
-
+            left = true;
+        }
+        else if (RightObser.GetComponent<Observer>().Incount == false)
+        {
+            left = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    void Chasing()
     {
-        if (other.gameObject.tag.Equals("Player"))
-            AtkCool();
+        if (attackedPlayer == true)
+            return;
+        if (Lincount == true)
+        {
+            spriteRenderer.flipX = true;
+            transform.position += vecLeft;
+        }
+        else if (Rincount == true)
+        {
+            spriteRenderer.flipX = false;
+            transform.position += vecRight;
+        }
     }
 
-    IEnumerator AtkCool()
+    private void OnTriggerStay2D(Collider2D other)
     {
-        atkCool = false; 
-        yield return new WaitForSeconds(3);
-        atkCool = true;
+        if(other.tag == "Player")
+            attackedPlayer = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+            attackedPlayer = false;
     }
 }
