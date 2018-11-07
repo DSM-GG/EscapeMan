@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Character\RayCaster.cs" />
     <Compile Include="Assets\Scripts\Character\TestCode.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Manager\LineManager.cs" />
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
     <Compile Include="Assets\Scripts\UI\Stage.cs" />
+    <None Include="Assets\Lines\Line_1.txt" />
     <None Include="Assets\temp.txt" />
     <None Include="Assets\Audio\temp.txt" />
     <None Include="Assets\Prefabs\temp.txt" />

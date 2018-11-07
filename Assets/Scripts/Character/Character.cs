@@ -12,8 +12,7 @@ public class Character : MonoBehaviour {
     Character_UI character_UI;
 
     public float fade_sec;
-    public float hp;
-    public float shield;
+    public float hpMax;
     public float shieldMax;
     public int life;
     public float damage;
@@ -25,6 +24,9 @@ public class Character : MonoBehaviour {
     public float slidingPower;
     public float slidingCoolTime;
 
+    public float shield;
+    public float hp;
+
     WaitForSeconds wfs;
     Color fadeIn, fadeOut;
 
@@ -34,6 +36,9 @@ public class Character : MonoBehaviour {
         attack = GetComponent<Attack>();
         sr = GetComponent<SpriteRenderer>();
         character_UI = GetComponent<Character_UI>();
+
+        hp = hpMax;
+        shield = shieldMax;
 
         fadeIn = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         fadeOut = new Color(1.0f, 1.0f, 1.0f, 0.5f);
@@ -48,12 +53,13 @@ public class Character : MonoBehaviour {
     public void Damaged(float damage)
     {
         hp -= damage;
-
         if (hp <= 0)
         {
             --life;
             if (life == 0)
                 Die();
+            else
+                hp = hpMax;
         }
 
         character_UI.ApplyChanges();
