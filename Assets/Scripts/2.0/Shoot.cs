@@ -6,9 +6,9 @@ public class Shoot : MonsterLogic2 {
     public GameObject[] bullets;
     public GameObject bulletPrefab;
     const int bullets_number = 5;
-    bool canFire;
+    bool canFire = true;
     
-    private void Awake()
+    virtual protected void Awake()
     {
         MakeBullet();
     }
@@ -23,26 +23,32 @@ public class Shoot : MonsterLogic2 {
         }
     }
 
-    private void Update()
+    virtual protected void Update()
     {
         ShootBullet(isIncount);
     }
 
     private void ShootBullet(bool incount)
     {
+
         if (incount == false)
+            return;
+        if (canFire == false)
             return;
 
         Bullet bullet = GetFreeBullet();
 
-        if(playerIsLeft == true)
+        if(Lincount == true)
         {
-            bullet.Move(new Vector2(-1, 0), this.gameObject.transform.position);
+            spriteRenderer.flipX = true;
+            bullet.Move(new Vector2(-5, 0), this.gameObject.transform.position);
         }
-        else
+        else if(Rincount == true)
         {
-            bullet.Move(new Vector2(1, 0), this.gameObject.transform.position);
+            spriteRenderer.flipX = false;
+            bullet.Move(new Vector2(5, 0), this.gameObject.transform.position);
         }
+        StartCoroutine("CoolTime");
     }
 
     Bullet GetFreeBullet()
@@ -55,5 +61,12 @@ public class Shoot : MonsterLogic2 {
             }
         }
         return null;
+    }
+
+    IEnumerator CoolTime()
+    {
+        canFire = false;
+        yield return new WaitForSeconds(3);
+        canFire = true;
     }
 }

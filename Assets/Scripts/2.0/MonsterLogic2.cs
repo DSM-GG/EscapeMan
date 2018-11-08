@@ -11,6 +11,7 @@ public class MonsterLogic2 : MonoBehaviour {
     public Vector3 vecRight = new Vector3(1, 0, 0);
     public GameObject player;
     protected SpriteRenderer spriteRenderer;
+    protected Animator animator;
 
     protected bool Rincount;
     protected bool Lincount;
@@ -18,8 +19,9 @@ public class MonsterLogic2 : MonoBehaviour {
     private bool isDead = false;
     private bool Stop = false;
 
-    private void Awake()
+    private void Start()
     {
+        animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -36,6 +38,8 @@ public class MonsterLogic2 : MonoBehaviour {
 
         if (Rincount == true || Lincount == true)
             isIncount = true;
+        else
+            isIncount = false;
 
         if (player.transform.position.x > transform.position.x)
             playerIsLeft = false;
@@ -70,11 +74,11 @@ public class MonsterLogic2 : MonoBehaviour {
         monsterHp -= dmg;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) // 벽에 부딪히면 방향전환.
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        switch(other.gameObject.tag)
+        switch (other.gameObject.tag)
         {
-            case "wall":
+            case "Wall":
                 if (left.Equals(true))
                     left = false;
                 else
