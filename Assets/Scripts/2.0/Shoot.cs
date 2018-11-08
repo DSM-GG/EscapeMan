@@ -36,7 +36,7 @@ public class Shoot : MonsterLogic2 {
         if (canFire == false)
             return;
 
-        Bullet bullet = GetFreeBullet();
+        MonBullet bullet = GetFreeBullet();
 
         if(Lincount == true)
         {
@@ -51,13 +51,13 @@ public class Shoot : MonsterLogic2 {
         StartCoroutine("CoolTime");
     }
 
-    Bullet GetFreeBullet()
+    MonBullet GetFreeBullet()
     {
         for(int i = 0; i < bullets_number; i++)
         {
             if(bullets[i].activeSelf == false)
             {
-                return bullets[i].GetComponent<Bullet>();
+                return bullets[i].GetComponent<MonBullet>();
             }
         }
         return null;

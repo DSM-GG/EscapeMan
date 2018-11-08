@@ -52,7 +52,7 @@ public class Attack : MonoBehaviour {
     }
 
     // 현재 비활성화인 총알을 반환.
-    Bullet GetFreeBullet()
+    MonBullet GetFreeBullet()
     {
         for(int i = 0; i < MAX_BULLET; ++i)
         {         
