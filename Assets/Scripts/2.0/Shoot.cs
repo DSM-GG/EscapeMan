@@ -36,28 +36,28 @@ public class Shoot : MonsterLogic2 {
         if (canFire == false)
             return;
 
-        MonBullet bullet = GetFreeBullet();
+        MBullet bullet = GetFreeBullet();
 
         if(Lincount == true)
         {
             spriteRenderer.flipX = true;
-            bullet.Move(new Vector2(-5, 0), this.gameObject.transform.position);
+            bullet.Fire(new Vector2(-5, 0), this.gameObject.transform.position);
         }
         else if(Rincount == true)
         {
             spriteRenderer.flipX = false;
-            bullet.Move(new Vector2(5, 0), this.gameObject.transform.position);
+            bullet.Fire(new Vector2(5, 0), this.gameObject.transform.position);
         }
         StartCoroutine("CoolTime");
     }
 
-    MonBullet GetFreeBullet()
+    MBullet GetFreeBullet()
     {
         for(int i = 0; i < bullets_number; i++)
         {
             if(bullets[i].activeSelf == false)
             {
-                return bullets[i].GetComponent<MonBullet>();
+                return bullets[i].GetComponent<MBullet>();
             }
         }
         return null;

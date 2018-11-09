@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour {
+public class Attack : MonoBehaviour
+{
 
     const int MAX_BULLET = 50;  // 총알 최대 수 
 
@@ -15,13 +16,14 @@ public class Attack : MonoBehaviour {
     bool isChecking = false;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         animator = GetComponent<Animator>();
         bullets = new GameObject[MAX_BULLET];
         movement = GetComponent<Movement>();
 
         CreateBullet();
-	}
+    }
 
     // Update is called once per frame
     private void Update()
@@ -32,10 +34,10 @@ public class Attack : MonoBehaviour {
     void Fire()
     {
         // Z키 입력 시 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
-            Bullet bullet = GetFreeBullet();
-            bullet.Move(movement.direction, transform.position);
+            MBullet bullet = GetFreeBullet();
+            bullet.Fire(movement.direction, transform.position);
             currentShoot = true;
             Debug.Log("Fire");
 
@@ -52,13 +54,13 @@ public class Attack : MonoBehaviour {
     }
 
     // 현재 비활성화인 총알을 반환.
-    MonBullet GetFreeBullet()
+    MBullet GetFreeBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
-        {         
-            if(bullets[i].activeSelf == false)
+        for (int i = 0; i < MAX_BULLET; ++i)
+        {
+            if (bullets[i].activeSelf == false)
             {
-                return bullets[i].GetComponent<Bullet>();
+                return bullets[i].GetComponent<MBullet>();
             }
         }
         return null;
@@ -67,7 +69,7 @@ public class Attack : MonoBehaviour {
     // 초기 총알들을 생성한다. 
     void CreateBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
+        for (int i = 0; i < MAX_BULLET; ++i)
         {
             bullets[i] = Instantiate(bullet_prefab);
             bullets[i].SetActive(false);
@@ -79,7 +81,7 @@ public class Attack : MonoBehaviour {
         isChecking = true;
         yield return new WaitForSeconds(1.0f);
 
-        if(!currentShoot)
+        if (!currentShoot)
         {
             animator.SetBool("isAttacking", false);
             Debug.Log("CLOSE");

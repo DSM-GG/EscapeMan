@@ -62,12 +62,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\Scripts\2.0\MBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\Monster\Fan.cs" />
-    <Compile Include="Assets\Scripts\2.0\Monster\MonrBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\Monster\Robot.cs" />
     <Compile Include="Assets\Scripts\2.0\Monster\Tire.cs" />
     <Compile Include="Assets\Scripts\2.0\Monster\Trackter.cs" />
-    <Compile Include="Assets\Scripts\2.0\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
     <Compile Include="Assets\Scripts\2.0\Observer.cs" />
     <Compile Include="Assets\Scripts\2.0\Shoot.cs" />
