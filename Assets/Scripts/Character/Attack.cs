@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour {
+public class Attack : MonoBehaviour
+{
 
     public int maxBullet = 10;  // 총알 최대 수 
 
@@ -15,13 +16,14 @@ public class Attack : MonoBehaviour {
     bool isChecking = false;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         animator = GetComponent<Animator>();
         bullets = new GameObject[maxBullet];
         movement = GetComponent<Movement>();
 
         CreateBullet();
-	}
+    }
 
     // Update is called once per frame
     private void Update()
@@ -88,7 +90,7 @@ public class Attack : MonoBehaviour {
         isChecking = true;
         yield return new WaitForSeconds(1.0f);
 
-        if(!currentShoot)
+        if (!currentShoot)
         {
             animator.SetBool("isAttacking", false);
             isChecking = false;

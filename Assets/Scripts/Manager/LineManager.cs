@@ -17,6 +17,7 @@ public class LineManager : MonoBehaviour {
     public Text Line;
 
     string[] lines;
+    int lineIndex = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -33,5 +34,12 @@ public class LineManager : MonoBehaviour {
         lines = File.ReadAllLines(@"Assets\Lines\" + stage + ".txt", Encoding.Default);
         
         Line.text = lines[0];
+    }
+
+    void NextLine()
+    {
+        ++lineIndex;
+        if (lineIndex >= lines.Length)
+            lineIndex = 0;
     }
 }

@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fade_sec: 0.1
-  hp: 0
+  hpMax: 0
+  shieldMax: 0
   life: 0
   damage: 0
   speed: 1.5
@@ -133,6 +134,8 @@ MonoBehaviour:
   jumpPower: 3
   slidingPower: 2
   slidingCoolTime: 0
+  shield: 0
+  hp: 0
 --- !u!114 &114232231265226714
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,7 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb9b0040b6351541a337038fab6e265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet_prefab: {fileID: 1022948686974036, guid: f43998e4261417c44a4b0a8e5195c348,
+  maxBullet: 10
+  bullet_prefab: {fileID: 1892966079245880, guid: f570ea08ce8082743b2d04cdbccdbede,
     type: 2}
 --- !u!212 &212483688313316314
 SpriteRenderer:

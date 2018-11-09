@@ -61,6 +61,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\Scripts\2.0\MBullet.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Fan.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Robot.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Tire.cs" />
+    <Compile Include="Assets\Scripts\2.0\Monster\Trackter.cs" />
+    <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
+    <Compile Include="Assets\Scripts\2.0\Observer.cs" />
+    <Compile Include="Assets\Scripts\2.0\Shoot.cs" />
     <Compile Include="Assets\Scripts\Character\Attack.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
@@ -71,9 +80,6 @@
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\Manager\LineManager.cs" />
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
-    <Compile Include="Assets\Scripts\Monster\GreenRobot.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterAtk.cs" />
-    <Compile Include="Assets\Scripts\Monster\MonsterBullet.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
     <Compile Include="Assets\Scripts\Tile\Ladder.cs" />
     <Compile Include="Assets\Scripts\UI\Character_UI.cs" />
@@ -84,7 +90,6 @@
     <None Include="Assets\Lines\Line_1.txt" />
     <None Include="Assets\temp.txt" />
     <None Include="Assets\Audio\temp.txt" />
-    <None Include="Assets\Prefabs\temp.txt" />
     <None Include="Assets\Scripts\temp.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>D:/Git_Local/DSM_GG/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

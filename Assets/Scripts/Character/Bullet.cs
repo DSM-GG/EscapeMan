@@ -44,6 +44,7 @@ public class Bullet : MonoBehaviour {
         if(collision.tag == "Enemy")
         {
             //collision.GetComponent<MonsterLogic>().Damaged(bullet_damage);
+            collision.GetComponent<MonsterLogic2>().Damaged(bullet_damage);
             StopCoroutine("BulletTimer");
             gameObject.SetActive(false);
         }
