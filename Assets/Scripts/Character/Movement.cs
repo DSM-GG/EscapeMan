@@ -118,8 +118,6 @@ public class Movement : MonoBehaviour {
 
     void Jump()
     {
-        Debug.Log("IsGrounded : " + isGrounded);
-
         if (isSliding)
             return;
 

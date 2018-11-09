@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Character\Character_UI.cs" />
     <Compile Include="Assets\Scripts\Character\Movement.cs" />
     <Compile Include="Assets\Scripts\Character\RayCaster.cs" />
     <Compile Include="Assets\Scripts\Character\TestCode.cs" />
@@ -82,7 +83,6 @@
     <Compile Include="Assets\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\Scripts\Monster\MonsterLogic.cs" />
     <Compile Include="Assets\Scripts\Tile\Ladder.cs" />
-    <Compile Include="Assets\Scripts\UI\Character_UI.cs" />
     <Compile Include="Assets\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\Scripts\UI\Point.cs" />
