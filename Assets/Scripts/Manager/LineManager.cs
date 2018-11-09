@@ -20,7 +20,7 @@ public class LineManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        ReadLine();
+        ReadLine("Line_1");
 	}
 	
 	// Update is called once per frame
@@ -28,9 +28,9 @@ public class LineManager : MonoBehaviour {
 		
 	}
 
-    void ReadLine()
+    void ReadLine(string stage)
     {
-        lines = File.ReadAllLines(@"Assets\Lines\Line_1.txt", Encoding.Default);
+        lines = File.ReadAllLines(@"Assets\Lines\" + stage + ".txt", Encoding.Default);
         
         Line.text = lines[0];
     }
