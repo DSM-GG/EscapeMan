@@ -5,7 +5,7 @@ using UnityEngine;
 public class Attack : MonoBehaviour
 {
 
-    const int MAX_BULLET = 50;  // 총알 최대 수 
+    public int maxBullet = 10;  // 총알 최대 수 
 
     public GameObject bullet_prefab;
 
@@ -19,7 +19,7 @@ public class Attack : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        bullets = new GameObject[MAX_BULLET];
+        bullets = new GameObject[maxBullet];
         movement = GetComponent<Movement>();
 
         CreateBullet();
@@ -34,12 +34,28 @@ public class Attack : MonoBehaviour
     void Fire()
     {
         // Z키 입력 시 
+<<<<<<< HEAD
         if (Input.GetKeyDown(KeyCode.Z))
         {
             MBullet bullet = GetFreeBullet();
             bullet.Fire(movement.direction, transform.position);
+=======
+        if(Input.GetKeyDown("z"))
+        {
+            // 슬라이딩중이면 공격을 하지 않는다.
+            if (movement.IsSliding())
+                return;
+
+            Bullet bullet = GetFreeBullet();
+
+            // 여유총알이 남아있지 않다면 아무것도 하지 않는다.
+            if (bullet == null)
+                return;
+
+            bullet.Move(movement.direction, transform.position);
+>>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
             currentShoot = true;
-            Debug.Log("Fire");
+            //Debug.Log("Fire");
 
             animator.SetBool("isAttacking", true);
         }
@@ -56,9 +72,15 @@ public class Attack : MonoBehaviour
     // 현재 비활성화인 총알을 반환.
     MBullet GetFreeBullet()
     {
+<<<<<<< HEAD
         for (int i = 0; i < MAX_BULLET; ++i)
         {
             if (bullets[i].activeSelf == false)
+=======
+        for(int i = 0; i < maxBullet; ++i)
+        {         
+            if(bullets[i].activeSelf == false)
+>>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
             {
                 return bullets[i].GetComponent<MBullet>();
             }
@@ -69,7 +91,11 @@ public class Attack : MonoBehaviour
     // 초기 총알들을 생성한다. 
     void CreateBullet()
     {
+<<<<<<< HEAD
         for (int i = 0; i < MAX_BULLET; ++i)
+=======
+        for(int i = 0; i < maxBullet; ++i)
+>>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
         {
             bullets[i] = Instantiate(bullet_prefab);
             bullets[i].SetActive(false);
@@ -84,12 +110,10 @@ public class Attack : MonoBehaviour
         if (!currentShoot)
         {
             animator.SetBool("isAttacking", false);
-            Debug.Log("CLOSE");
             isChecking = false;
-            yield return null;
+            //yield return null;
         }
 
-        Debug.Log("CLOSE2");
         isChecking = false;
     }
 }
