@@ -24,6 +24,7 @@ public class Hp : MonoBehaviour {
                     break;
             }
         }
+
         else if(other.tag == "Enemy")
         {
             if (ShBar.value != 0)
@@ -41,6 +42,7 @@ public class Hp : MonoBehaviour {
             }
         }
     }
+
     private void FixedUpdate()
     {
         if(rebirth == 0 && HpBar.value == 0) // 부활가능 횟수가 0이고 체력이 0이면 사망
@@ -48,6 +50,7 @@ public class Hp : MonoBehaviour {
             isDead();
         }
     }
+
     private void isDead()
     {
         // gameover

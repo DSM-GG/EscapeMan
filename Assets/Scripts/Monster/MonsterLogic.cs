@@ -6,7 +6,7 @@ public class MonsterLogic : MonoBehaviour {
     public GameObject Player;
     public bool incount;
     SpriteRenderer renderer;
-    protected const int ICOUNT_LEGNTH = 5;
+    protected const int ICOUNT_LEGNTH = 2;
     protected bool left { get; set; } // 벽에 부딫혔을 때 이동방향을 정해줌.
                // Use this for initialization
 

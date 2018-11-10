@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : MonoBehaviour {
+public class Attack : MonoBehaviour
+{
 
-    const int MAX_BULLET = 50;  // 총알 최대 수 
+    public int maxBullet = 10;  // 총알 최대 수 
 
     public GameObject bullet_prefab;
 
@@ -15,13 +16,14 @@ public class Attack : MonoBehaviour {
     bool isChecking = false;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         animator = GetComponent<Animator>();
-        bullets = new GameObject[MAX_BULLET];
+        bullets = new GameObject[maxBullet];
         movement = GetComponent<Movement>();
 
         CreateBullet();
-	}
+    }
 
     // Update is called once per frame
     private void Update()
@@ -32,12 +34,21 @@ public class Attack : MonoBehaviour {
     void Fire()
     {
         // Z키 입력 시 
-        if(Input.GetKeyDown(KeyCode.Z))
+        if(Input.GetKeyDown("z"))
         {
+            // 슬라이딩중이면 공격을 하지 않는다.
+            if (movement.IsSliding())
+                return;
+
             Bullet bullet = GetFreeBullet();
+
+            // 여유총알이 남아있지 않다면 아무것도 하지 않는다.
+            if (bullet == null)
+                return;
+
             bullet.Move(movement.direction, transform.position);
             currentShoot = true;
-            Debug.Log("Fire");
+            //Debug.Log("Fire");
 
             animator.SetBool("isAttacking", true);
         }
@@ -54,7 +65,7 @@ public class Attack : MonoBehaviour {
     // 현재 비활성화인 총알을 반환.
     Bullet GetFreeBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
+        for(int i = 0; i < maxBullet; ++i)
         {         
             if(bullets[i].activeSelf == false)
             {
@@ -67,7 +78,7 @@ public class Attack : MonoBehaviour {
     // 초기 총알들을 생성한다. 
     void CreateBullet()
     {
-        for(int i = 0; i < MAX_BULLET; ++i)
+        for(int i = 0; i < maxBullet; ++i)
         {
             bullets[i] = Instantiate(bullet_prefab);
             bullets[i].SetActive(false);
@@ -79,15 +90,13 @@ public class Attack : MonoBehaviour {
         isChecking = true;
         yield return new WaitForSeconds(1.0f);
 
-        if(!currentShoot)
+        if (!currentShoot)
         {
             animator.SetBool("isAttacking", false);
-            Debug.Log("CLOSE");
             isChecking = false;
-            yield return null;
+            //yield return null;
         }
 
-        Debug.Log("CLOSE2");
         isChecking = false;
     }
 }
