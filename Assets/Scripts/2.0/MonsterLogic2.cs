@@ -31,7 +31,7 @@ public class MonsterLogic2 : MonoBehaviour {
         Move();
     }
 
-    protected void Check() // 플레이어가 incount상태인가 + 플레이어가 몬스터의 어느쪽에 있는가를 확인해 줌.
+    virtual protected void Check() // 플레이어가 incount상태인가 + 플레이어가 몬스터의 어느쪽에 있는가를 확인해 줌.
     {
         Rincount = transform.GetChild(0).GetChild(0).gameObject.GetComponent<Observer>().Incount;
         Lincount = transform.GetChild(0).GetChild(1).gameObject.GetComponent<Observer>().Incount;

@@ -22,6 +22,7 @@ public class SpeakerList : MonoBehaviour {
 
     public static LineInform[] lineInforms =
     {
-        new LineInform("RockMan", "Portrait/UMP45"),
+        new LineInform("RockMan", "Portrait/RockMan"),
+        new LineInform("Boss1", "Portrait/Boss1"),
     };
 }

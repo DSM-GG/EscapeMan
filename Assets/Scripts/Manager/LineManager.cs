@@ -20,6 +20,7 @@ public class LineManager : MonoBehaviour {
 
     string[] lines;
     int lineIndex = 0;
+    int nowStg = 1;
 
     // Use this for initialization
     void Start() {
@@ -29,7 +30,7 @@ public class LineManager : MonoBehaviour {
         line = lineBox.transform.GetChild(2).GetComponent<Text>();
 
         wfs = new WaitForSeconds(TYPE_SPEED);
-        ReadLine(1);
+        ReadLine(nowStg);
         InsertLine();
     }
 
@@ -40,6 +41,7 @@ public class LineManager : MonoBehaviour {
 
     void ReadLine(int stage)
     {
+        lineIndex = 0;
         string fileName = @"Assets\Lines\Line_" + stage + ".txt";
         lines = File.ReadAllLines(fileName, Encoding.Default);
     }
@@ -50,13 +52,16 @@ public class LineManager : MonoBehaviour {
         line.text = " ";
         // 다음 대사로 넘김
         ++lineIndex;
-        if (lineIndex >= lines.Length)
-            lineIndex = 0;
+        if (lineIndex == lines.Length)
+            TurnOffLineBox();
     }
 
     void InsertLine()
     {
-        int who = (int)lines[0][0];
+        if (lineBox.activeSelf == false)
+            return;
+
+        int who = lines[lineIndex][0] - '0';
         speakerName.text = SpeakerList.lineInforms[who].name;
         portrait.sprite = SpeakerList.lineInforms[who].portrait;
         StartCoroutine("TypeLine");
@@ -66,6 +71,7 @@ public class LineManager : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
+            StopCoroutine("TypeLine");
             NextLine();
             InsertLine();
         }
@@ -85,5 +91,18 @@ public class LineManager : MonoBehaviour {
     {
         lineBox.SetActive(true);
         ReadLine(scriptNo);
+    }
+
+    public void TurnOffLineBox()
+    {
+        lineBox.SetActive(false);
+    }
+
+    public bool IsTalking()
+    {
+        if (lineBox.activeSelf == true)
+            return true;
+        else
+            return false;
     }
 }

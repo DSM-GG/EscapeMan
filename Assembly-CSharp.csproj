@@ -70,6 +70,8 @@
     <Compile Include="Assets\Scripts\2.0\MonsterLogic2.cs" />
     <Compile Include="Assets\Scripts\2.0\Observer.cs" />
     <Compile Include="Assets\Scripts\2.0\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Boss\Boss1\Bomb.cs" />
+    <Compile Include="Assets\Scripts\Boss\Boss1\Boss1.cs" />
     <Compile Include="Assets\Scripts\Character\Attack.cs" />
     <Compile Include="Assets\Scripts\Character\Bullet.cs" />
     <Compile Include="Assets\Scripts\Character\Camera.cs" />
