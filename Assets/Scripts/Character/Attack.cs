@@ -34,12 +34,6 @@ public class Attack : MonoBehaviour
     void Fire()
     {
         // Z키 입력 시 
-<<<<<<< HEAD
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            MBullet bullet = GetFreeBullet();
-            bullet.Fire(movement.direction, transform.position);
-=======
         if(Input.GetKeyDown("z"))
         {
             // 슬라이딩중이면 공격을 하지 않는다.
@@ -53,7 +47,6 @@ public class Attack : MonoBehaviour
                 return;
 
             bullet.Move(movement.direction, transform.position);
->>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
             currentShoot = true;
             //Debug.Log("Fire");
 
@@ -70,19 +63,13 @@ public class Attack : MonoBehaviour
     }
 
     // 현재 비활성화인 총알을 반환.
-    MBullet GetFreeBullet()
+    Bullet GetFreeBullet()
     {
-<<<<<<< HEAD
-        for (int i = 0; i < MAX_BULLET; ++i)
-        {
-            if (bullets[i].activeSelf == false)
-=======
         for(int i = 0; i < maxBullet; ++i)
         {         
             if(bullets[i].activeSelf == false)
->>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
             {
-                return bullets[i].GetComponent<MBullet>();
+                return bullets[i].GetComponent<Bullet>();
             }
         }
         return null;
@@ -91,11 +78,7 @@ public class Attack : MonoBehaviour
     // 초기 총알들을 생성한다. 
     void CreateBullet()
     {
-<<<<<<< HEAD
-        for (int i = 0; i < MAX_BULLET; ++i)
-=======
         for(int i = 0; i < maxBullet; ++i)
->>>>>>> d5a5f71dab1160ff6a01fe05bc5800358fe2ebee
         {
             bullets[i] = Instantiate(bullet_prefab);
             bullets[i].SetActive(false);

@@ -25,8 +25,13 @@ GameObject:
   - component: {fileID: 58235530882740466}
   - component: {fileID: 50881810990662214}
   m_Layer: 0
+<<<<<<< HEAD:Assets/Prefabs/Bullet.prefab
+  m_Name: Bullet
+  m_TagString: Bullet
+=======
   m_Name: Fan_bullet
   m_TagString: Untagged
+>>>>>>> origin/Chan:Assets/Prefabs2.0/Factory/Fan_bullet.prefab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,8 +114,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+<<<<<<< HEAD:Assets/Prefabs/Bullet.prefab
+  bullet_speed: 3
+  bullet_damage: 3
+  bullet_Distance: 2
+--- !u!212 &212635184188599366
+=======
   bullet_speed: 0.5
 --- !u!212 &212733038995719814
+>>>>>>> origin/Chan:Assets/Prefabs2.0/Factory/Fan_bullet.prefab
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

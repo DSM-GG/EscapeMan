@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class MonsterLogic2 : MonoBehaviour {
     public float monsterHp;
-    protected bool left; // 왼쪽을 향할 때 true
-    protected bool playerIsLeft; // 몬스터기준 플레이어 위치
-    
     public Vector3 vecLeft = new Vector3 (-1, 0, 0);
     public Vector3 vecRight = new Vector3(1, 0, 0);
     public GameObject player;
+    
+    protected bool left; // 왼쪽을 향할 때 true
+    protected bool playerIsLeft; // 몬스터기준 플레이어 위치
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
-
     protected bool Rincount;
     protected bool Lincount;
     protected bool isIncount;
+
     private bool isDead = false;
-    private bool Stop = false;
+    private bool stop = false;
 
     private void Start()
     {
@@ -72,19 +72,6 @@ public class MonsterLogic2 : MonoBehaviour {
     public void Damaged(float dmg) // 몬스터를 총알로 맞추면 플레이어가 이 함수를 호출한다.
     {
         monsterHp -= dmg;
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        switch (other.gameObject.tag)
-        {
-            case "Wall":
-                if (left.Equals(true))
-                    left = false;
-                else
-                    left = true;
-                break;
-        }
     }
 
     IEnumerator MonsterDying()

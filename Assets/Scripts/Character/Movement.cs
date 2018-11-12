@@ -165,7 +165,6 @@ public class Movement : MonoBehaviour {
         // 슬라이딩 시간이 지난 후, 쿨타임을 초기화 한다.
         isSliding = false;
         isSlideCool = false;
-        animator.ResetTrigger("SlidingTrigger");
     }
 
     public bool GetGrounded()
