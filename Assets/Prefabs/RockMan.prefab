@@ -133,7 +133,7 @@ MonoBehaviour:
   status: 0
   score: 0
   jumpPower: 3
-  slidingPower: 2
+  slidingPower: 2.5
   slidingCoolTime: 0
   shield: 0
   hp: 0

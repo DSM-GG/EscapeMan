@@ -21,6 +21,9 @@ GameObject:
   - component: {fileID: 4734188013117850}
   - component: {fileID: 212777951033296158}
   - component: {fileID: 114211401555780910}
+  - component: {fileID: 95989017912777556}
+  - component: {fileID: 50553221297307958}
+  - component: {fileID: 70271804623222332}
   m_Layer: 0
   m_Name: Boss_Missile
   m_TagString: Untagged
@@ -35,12 +38,65 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154748813924978}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7510542, y: -0.09195123, z: 0.43554688}
+  m_LocalPosition: {x: -3.4379106, y: 0.496993, z: 0.43554688}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50553221297307958
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154748813924978}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!70 &70271804623222332
+CapsuleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154748813924978}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07268064, y: -0.002744736}
+  m_Size: {x: 0.21059762, y: 0.15608779}
+  m_Direction: 1
+--- !u!95 &95989017912777556
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154748813924978}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcd25e569c7c775428ffa2267861e80f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114211401555780910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -52,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1e1a344f535ad4f9e3ddf767e69937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
+  damage: 5
+  range: 10
+  missileSprite: {fileID: 21300000, guid: 71f085179b050e54fad5eb81c010bf8a, type: 3}
 --- !u!212 &212777951033296158
 SpriteRenderer:
   m_ObjectHideFlags: 1

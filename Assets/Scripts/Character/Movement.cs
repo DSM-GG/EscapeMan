@@ -21,6 +21,7 @@ public class Movement : MonoBehaviour {
     SpriteRenderer sr;
     Rigidbody2D rb;
     Character character;
+    Attack attack;
 
     Vector3 ladder_velocity;
     float ladderPosX;
@@ -31,6 +32,7 @@ public class Movement : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         character = GetComponent<Character>();
+        attack = GetComponent<Attack>();
 
         direction = new Vector3();
         ladder_velocity = new Vector3();
@@ -141,6 +143,7 @@ public class Movement : MonoBehaviour {
 
     void Sliding()
     {
+        if (isClimbing) return;
         // 현재 바라보고 있는 방향을 향해서
         // 슬라이딩을 한다.
         if (!isSliding && Input.GetKeyDown(KeyCode.LeftShift))
