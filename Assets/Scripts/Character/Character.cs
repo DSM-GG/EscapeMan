@@ -10,11 +10,9 @@ public class Character : MonoBehaviour {
     Attack attack;
     SpriteRenderer sr;
     Character_UI character_UI;
+    bool Isinvincibility = false;
 
     public float fade_sec;
-    public float hpMax;
-    public float shieldMax;
-    public int life;
     public float damage;
     public float speed;
     public float ladderSpeed;
@@ -24,7 +22,7 @@ public class Character : MonoBehaviour {
     public float slidingPower;
     public float slidingCoolTime;
 
-    public float shield;
+    public float hpMax;
     public float hp;
 
     WaitForSeconds wfs;
@@ -38,7 +36,6 @@ public class Character : MonoBehaviour {
         character_UI = GetComponent<Character_UI>();
 
         hp = hpMax;
-        shield = shieldMax;
 
         fadeIn = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         fadeOut = new Color(1.0f, 1.0f, 1.0f, 0.5f);
@@ -52,15 +49,12 @@ public class Character : MonoBehaviour {
 
     public void Damaged(float damage)
     {
+        if (Isinvincibility)
+            return;
+
         hp -= damage;
         if (hp <= 0)
-        {
-            --life;
-            if (life == 0)
-                Die();
-            else
-                hp = hpMax;
-        }
+            Die();
 
         character_UI.ApplyChanges();
         StartCoroutine("Fade");
@@ -73,6 +67,7 @@ public class Character : MonoBehaviour {
 
     IEnumerator Fade()
     {
+        Isinvincibility = true;
         int cnt = 0;
         while (cnt <= FADE_CNT)
         {
@@ -86,5 +81,6 @@ public class Character : MonoBehaviour {
 
             ++cnt;
         }
+        Isinvincibility = false;
     }
 }

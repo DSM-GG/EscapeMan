@@ -2,47 +2,51 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss1 : MonsterLogic2 {
-
+public class Boss1 : MonsterLogic2
+{ 
     public float floatSpeed;
     public float moveSpeed;
 
     public float moveCoolTime;
-    public float bombCoolTime;
-    public float missileCoolTime;
+    public float crashDamage;
 
-    WaitForSeconds wfs_missile, wfs_moving, wfs_bomb;
+    private WaitForSeconds wfs_missile, wfs_moving, wfs_bomb;
 
-    Vector3 scale;
-    Vector3 additionPos;
-    Vector3 movingPos;
-    float time = 0.0f;
-    int dir = 1;
+    private Vector3 scale;
+    private Vector3 additionPos;
+    private Vector3 movingPos;
+    private float time = 0.0f;
+    private int dir = 1;
 
-    float prevX = 0, nowX = 0;
-    bool isMovingCool, isMissileCool, isBombCool;
+    private float prevX = 0, nowX = 0;
+    private bool isMovingCool;
+    private bool isClose = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Awake()
+    {
         additionPos = new Vector3(0, 0, 0);
         scale = new Vector3();
         movingPos = new Vector3();
         player = GameObject.Find("RockMan");
 
-        wfs_missile = new WaitForSeconds(missileCoolTime);
         wfs_moving = new WaitForSeconds(moveCoolTime);
-        wfs_bomb = new WaitForSeconds(bombCoolTime);
 
         nowX = transform.position.x;
-        isMovingCool = isMissileCool = isBombCool = false;
+        isMovingCool = false;
 
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void Start()
+    {
         Flip();
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     protected override void Move()
     {
@@ -59,7 +63,6 @@ public class Boss1 : MonsterLogic2 {
     {
         time += Time.deltaTime * floatSpeed;
         float y = Mathf.Sin(time) * 0.02f;
-        Debug.Log(y);
         additionPos.Set(0, y, 0);
         transform.position += additionPos;
     }
@@ -67,18 +70,11 @@ public class Boss1 : MonsterLogic2 {
     void Moving()
     {
         if (isMovingCool) return;
-        nowX = transform.position.x;
-
-        if(prevX == nowX)
-        {
-            StartCoroutine("MovingCool");
-        }
 
         movingPos.Set(moveSpeed * dir, 0, 0);
         transform.position += movingPos;
-        prevX = nowX;
     }
-        
+
     void Flip()
     {
         scale.Set(transform.localScale.x * -1, 1, 1);
@@ -88,19 +84,41 @@ public class Boss1 : MonsterLogic2 {
 
     IEnumerator MovingCool()
     {
-        Flip();
         isMovingCool = true;
         yield return wfs_moving;
         isMovingCool = false;
     }
 
-    IEnumerator BombCool()
+    public int GetDir()
     {
-        yield return wfs_bomb;
+        return dir;
     }
 
-    IEnumerator MissileCool()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        yield return wfs_missile;
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Character>().Damaged(crashDamage);
+        }
+        else if (collision.gameObject.tag == "Platform")
+        {
+            if (!isClose)
+            {
+                StartCoroutine("MovingCool");
+                isClose = true;
+                Flip();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Platform")
+        {
+            if (isClose)
+            {
+                isClose = false;
+            }
+        }
     }
 }

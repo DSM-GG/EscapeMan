@@ -62,6 +62,11 @@ public class Attack : MonoBehaviour
         }
     }
 
+    public bool isAttacked()
+    {
+        return isChecking;
+    }
+
     // 현재 비활성화인 총알을 반환.
     Bullet GetFreeBullet()
     {
