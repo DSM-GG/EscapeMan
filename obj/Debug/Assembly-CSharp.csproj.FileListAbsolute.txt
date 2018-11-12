@@ -170,7 +170,6 @@ C:\Users\user\Desktop\programming\개인 프로젝트\Unity\EscapeMan\obj\Debug\
 =======
 C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\chan\Desktop\코드\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
-<<<<<<< HEAD
 >>>>>>> master
 D:\Git_Local\DSM_GG\EscapeMan\Temp\bin\Debug\Assembly-CSharp.dll
 D:\Git_Local\DSM_GG\EscapeMan\Temp\bin\Debug\Assembly-CSharp.pdb
@@ -340,7 +339,6 @@ D:\Git_Local\DSM_GG\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs
 D:\Git_Local\DSM_GG\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\Git_Local\DSM_GG\EscapeMan\obj\Debug\Assembly-CSharp.dll
 D:\Git_Local\DSM_GG\EscapeMan\obj\Debug\Assembly-CSharp.pdb
-=======
 C:\Users\chan\Desktop\EscapeMan\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\chan\Desktop\EscapeMan\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\chan\Desktop\EscapeMan\obj\Debug\Assembly-CSharp.dll
