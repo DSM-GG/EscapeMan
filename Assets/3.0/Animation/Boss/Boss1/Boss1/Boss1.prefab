@@ -189,7 +189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1572445691038726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.237, y: 1.063, z: 1}
+  m_LocalPosition: {x: -4.0146713, y: 0.42, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4763944478780272}
@@ -332,10 +332,8 @@ MonoBehaviour:
   fire_bomb_number: 6
   cannonDelay: 1
   launcherDelay: 0.5
-  bombCool: 6
-  missileCool: 10
-  bombCoolTime: 0
-  missileCoolTime: 0
+  cannonCool: 6
+  launcherCool: 3
 --- !u!114 &114356924915363236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -354,8 +352,6 @@ MonoBehaviour:
   floatSpeed: 3
   moveSpeed: 0.1
   moveCoolTime: 3
-  bombCoolTime: 4
-  missileCoolTime: 3
   crashDamage: 5
 --- !u!114 &114769202111099348
 MonoBehaviour:

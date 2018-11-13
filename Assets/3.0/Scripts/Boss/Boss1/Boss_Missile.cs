@@ -55,7 +55,6 @@ public class Boss_Missile : MonoBehaviour {
         direction = dir;
         gameObject.SetActive(true);
         transform.position = launcherPos;
-        Debug.Log(angle);
         rb.AddForce(angle * speed, ForceMode2D.Impulse);
     }
 

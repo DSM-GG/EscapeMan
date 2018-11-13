@@ -69,7 +69,7 @@ public class MonsterLogic2 : MonoBehaviour {
         }
     }
 
-    public void Damaged(float dmg) // 몬스터를 총알로 맞추면 플레이어가 이 함수를 호출한다.
+    virtual public void Damaged(float dmg) // 몬스터를 총알로 맞추면 플레이어가 이 함수를 호출한다.
     {
         monsterHp -= dmg;
     }

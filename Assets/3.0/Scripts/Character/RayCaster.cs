@@ -75,11 +75,12 @@ public class RayCaster : MonoBehaviour {
         bool temp = false;
 
         v.Set(transform.position.x, transform.position.y + height - minus2, transform.position.z);
-        hit = Physics2D.RaycastAll(v, Vector2.down, (groundDist * 2) - 0.05f);
+        hit = Physics2D.RaycastAll(v, Vector2.down, (groundDist * 2) /*- 0.05f*/);
         foreach (RaycastHit2D elem in hit)
         {
             if (elem.transform.tag == "Ladder")
             {
+                Debug.Log("ASD");
                 temp = true;
             }
         }

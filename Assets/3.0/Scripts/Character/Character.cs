@@ -9,7 +9,6 @@ public class Character : MonoBehaviour {
     Movement movement; 
     Attack attack;
     SpriteRenderer sr;
-    Character_UI character_UI;
     bool Isinvincibility = false;
 
     public float fade_sec;
@@ -29,11 +28,10 @@ public class Character : MonoBehaviour {
     Color fadeIn, fadeOut;
 
     // Use this for initialization
-    void Start () {
+    void Awake () {
         movement = GetComponent<Movement>();
         attack = GetComponent<Attack>();
         sr = GetComponent<SpriteRenderer>();
-        character_UI = GetComponent<Character_UI>();
 
         hp = hpMax;
 
@@ -54,10 +52,13 @@ public class Character : MonoBehaviour {
 
         hp -= damage;
         if (hp <= 0)
-            Die();
-
-        character_UI.ApplyChanges();
-        StartCoroutine("Fade");
+        {
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine("Fade");
+        }
     }
 
     void Die()

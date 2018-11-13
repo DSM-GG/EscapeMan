@@ -86,7 +86,6 @@ public class Boss1_Attack : MonoBehaviour {
 
     IEnumerator LauncherCool()
     {
-        Vector3 playerPos = GetComponent<Boss1>().player.transform.position;
         launcher.Fire(fire_missile_number, boss.GetDir());
         yield return wfs_launcher;
         StartCoroutine("LauncherCool");

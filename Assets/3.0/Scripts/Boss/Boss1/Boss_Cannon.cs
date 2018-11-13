@@ -40,7 +40,6 @@ public class Boss_Cannon : MonoBehaviour {
     {
         for (int i = 0; i < bombAmount; ++i)
         {
-            Debug.Log("index : " + i);
             if (bomb[i].activeSelf == false)
                 return bomb[i].GetComponent<Boss_Bomb>();
         }
@@ -59,7 +58,6 @@ public class Boss_Cannon : MonoBehaviour {
             animator.SetTrigger("Fire");
             Boss_Bomb load = FindBullet();
             load.Shoot(dir, transform.position);
-            Debug.Log(transform.position);
             yield return wfs_fireDelay;
         }
     }

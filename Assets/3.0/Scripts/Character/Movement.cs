@@ -10,7 +10,7 @@ public class Movement : MonoBehaviour {
     public Vector3 direction;
 
     bool isClimbing = false;
-    bool isGrounded = true;     // 착지 상태
+    bool isGrounded = false;     // 착지 상태
     bool isJumped = false;      // 캐릭터의 점프 상태 
     bool isSliding = false;     // 캐릭터의 슬라이딩 상태
     bool isUpLadder = false;
@@ -41,6 +41,8 @@ public class Movement : MonoBehaviour {
         moveSpeed = character.speed;
         jumpPower = character.jumpPower;
         slidingPower = character.slidingPower;
+
+        animator.ResetTrigger("isGrounded");
 
         direction = Vector3.right;
     }
@@ -122,7 +124,7 @@ public class Movement : MonoBehaviour {
     {
         if (isSliding)
             return;
-
+;
         // 점프해서 착지했다면 
         if (isGrounded && isJumped)
         {
@@ -200,7 +202,7 @@ public class Movement : MonoBehaviour {
     {
         ladderPosX = posX;
         isUpLadder = val;
-        if (!val)
+        if (!val && isGrounded)
         {
             animator.SetTrigger("isGrounded");
             isClimbing = false;

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114485684630078206}
   - component: {fileID: 50179196117985228}
   - component: {fileID: 61916477562705978}
+  - component: {fileID: 95153169732974810}
   m_Layer: 0
   m_Name: Character_Bullet
   m_TagString: Untagged
@@ -88,6 +89,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.08}
   m_EdgeRadius: 0
+--- !u!95 &95153169732974810
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1892966079245880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8930d32d7d998840bb181399bb5ed79, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114485684630078206
 MonoBehaviour:
   m_ObjectHideFlags: 1

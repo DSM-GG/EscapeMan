@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour {
     public WaitForSeconds bullet_Wait_second;
 
     private const float BULLET_MAX_TIME = 1.5f;
+    private Animator animator;
 
     float originX;
 
@@ -20,6 +21,7 @@ public class Bullet : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
+        animator = GetComponent<Animator>();
         bullet_Wait_second = new WaitForSeconds(BULLET_MAX_TIME);
         rb = GetComponent<Rigidbody2D>();
         character = GetComponent<Character>();
@@ -34,6 +36,7 @@ public class Bullet : MonoBehaviour {
     public void Move(Vector2 dir, Vector3 pos)
     {
         gameObject.SetActive(true);
+        rb.simulated = true;
         //originX = gameObject.transform.position.x;
         transform.position = new Vector3(pos.x + dir.x * 0.3f, pos.y, pos.x);
         rb.AddForce(dir * bullet_speed, ForceMode2D.Impulse);
@@ -44,16 +47,25 @@ public class Bullet : MonoBehaviour {
     {
         if(collision.tag == "Enemy")
         {
-            //collision.GetComponent<MonsterLogic>().Damaged(bullet_damage);
             collision.GetComponent<MonsterLogic2>().Damaged(bullet_damage);
             StopCoroutine("BulletTimer");
-            gameObject.SetActive(false);
-            Debug.Log("HIT");
+            HitAnim();
         }
         else if(collision.tag == "Platform")
         {
-            gameObject.SetActive(false);
+            HitAnim();
         }
+    }
+
+    void HitAnim()
+    {
+        rb.simulated = false;
+        animator.SetTrigger("hitted");
+    }
+
+    void Deactive()
+    {
+        gameObject.SetActive(false);
     }
 
     // 시간을 재서 총알을 끄는 코루틴
