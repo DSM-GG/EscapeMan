@@ -28,11 +28,6 @@ public class Bullet : MonoBehaviour {
         originX = gameObject.transform.position.x;
     }
 
-    //private void Update()
-    //{
-
-    //}
-
     public void Move(Vector2 dir, Vector3 pos)
     {
         gameObject.SetActive(true);
@@ -47,9 +42,9 @@ public class Bullet : MonoBehaviour {
     {
         if(collision.tag == "Enemy")
         {
+            HitAnim();
             collision.GetComponent<MonsterLogic2>().Damaged(bullet_damage);
             StopCoroutine("BulletTimer");
-            HitAnim();
         }
         else if(collision.tag == "Platform")
         {
@@ -59,8 +54,8 @@ public class Bullet : MonoBehaviour {
 
     void HitAnim()
     {
-        rb.simulated = false;
         animator.SetTrigger("hitted");
+        rb.simulated = false;        
     }
 
     void Deactive()

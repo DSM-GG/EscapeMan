@@ -142,7 +142,7 @@ MonoBehaviour:
   jumpPower: 3
   slidingPower: 2.5
   slidingCoolTime: 0
-  hpMax: 10
+  hpMax: 20
   hp: 0
 --- !u!114 &114839112708086128
 MonoBehaviour:

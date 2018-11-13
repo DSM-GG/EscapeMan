@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
     int nowChapter = 1;
     int nowStage = 1;
+    bool pannelOn = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         IsFalling();
+        CheckDied();
 	}
 
     void IsFalling()
@@ -29,12 +31,17 @@ public class GameManager : MonoBehaviour {
     void CheckDied()
     {
         if (player.GetComponent<Character>().hp <= 0)
-            GameOver();
+            GameOver(false);
     }
 
-    void GameOver()
+    public void GameOver(bool isClear)
     {
-        transform.GetComponent<OverScript>();
+        if (pannelOn) return;
+        pannelOn = true;
+        string clear = (isClear == true) ? "CLEAR" : "FAILED";
+        string time = "TIME : " + GetComponent<Timer>().GetTime();
+        string stg = nowChapter.ToString() + " - " + nowStage.ToString();
+        transform.GetComponent<OverScript>().OpenOverPannel(clear, time, stg); 
     }
 
     void Set_Chapter_Stg(int chapter, int stage)
