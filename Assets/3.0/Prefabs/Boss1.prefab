@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114328592256900142}
   - component: {fileID: 50575947744913888}
   - component: {fileID: 61063907949668746}
+  - component: {fileID: 95952729150431150}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Enemy
@@ -317,6 +318,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!95 &95952729150431150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1132493076902296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0c85e0f60da1c87499acdd48f55fabb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114038210824645596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c74d528e2258eb04faf34b282eb54040, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterHp: 0
+  monsterHp: 10
   vecLeft: {x: -1, y: 0, z: 0}
   vecRight: {x: 1, y: 0, z: 0}
   player: {fileID: 0}
