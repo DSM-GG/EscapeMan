@@ -61,21 +61,61 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Character\Attack.cs" />
-    <Compile Include="Assets\Scripts\Character\Bullet.cs" />
-    <Compile Include="Assets\Scripts\Character\Camera.cs" />
-    <Compile Include="Assets\Scripts\Character\Movement.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Chase.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\MBullet.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Monster\Fan.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Monster\Robot.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Monster\Tire.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Monster\Trackter.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\MonsterLogic2.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Observer.cs" />
+    <Compile Include="Assets\3.0\Scripts\2.0\Shoot.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss_Bomb.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss_Cannon.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss_Launcher.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss_Missile.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss1.cs" />
+    <Compile Include="Assets\3.0\Scripts\Boss\Boss1\Boss1_Attack.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Attack.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Bullet.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Camera.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Character.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Character_UI.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\Movement.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\RayCaster.cs" />
+    <Compile Include="Assets\3.0\Scripts\Character\TestCode.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\ChangeLV.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\GameManager.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\LineManager.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\MapManager.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\SpeakerList.cs" />
+    <Compile Include="Assets\3.0\Scripts\Monster\MonsterLogic.cs" />
+    <Compile Include="Assets\3.0\Scripts\Tile\Ladder.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\ExampleStage.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\Hp.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\OverScript.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\Point.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\Stage.cs" />
+    <None Include="Assets\3.0\Lines\Line_1.txt" />
+    <None Include="Assets\ESSET\Assets\Scripts\temp.txt" />
+    <None Include="Assets\ESSET\Assets\temp.txt" />
+    <None Include="Assets\Old\temp.txt" />
+    <None Include="Assets\3.0\Audio\temp.txt" />
+    <None Include="Assets\ESSET\Assets\Lines\Line_1.txt" />
+    <None Include="Assets\3.0\Prefabs\temp.txt" />
+    <None Include="Assets\ESSET\Assets\Audio\temp.txt" />
+    <None Include="Assets\3.0\Scripts\temp.txt" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/user/Desktop/programming/개인 프로젝트/Unity/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/user/Desktop/programming/개인 프로젝트/Unity/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/user/Desktop/programming/개인 프로젝트/Unity/EscapeMan/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/user/Desktop/programming/개인 프로젝트/Unity/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -276,10 +316,10 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/user/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/chan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/user/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/chan/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
