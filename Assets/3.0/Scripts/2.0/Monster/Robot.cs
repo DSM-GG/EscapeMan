@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Robot : MonoBehaviour {
+public class Robot : MonoBehaviour
+{
     public GameObject smallRobot;
 
-    private void OnDestroy()
+    public void Spawn()
     {
-        Instantiate(this.gameObject, this.transform);
+        Instantiate(smallRobot, transform.position - new Vector3(0, 0.1f, 0), Quaternion.identity);
     }
 }

@@ -85,26 +85,25 @@
     <Compile Include="Assets\3.0\Scripts\Character\RayCaster.cs" />
     <Compile Include="Assets\3.0\Scripts\Character\TestCode.cs" />
     <Compile Include="Assets\3.0\Scripts\Manager\ChangeLV.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\ClearDetector.cs" />
     <Compile Include="Assets\3.0\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\3.0\Scripts\Manager\LineManager.cs" />
     <Compile Include="Assets\3.0\Scripts\Manager\MapManager.cs" />
     <Compile Include="Assets\3.0\Scripts\Manager\SpeakerList.cs" />
+    <Compile Include="Assets\3.0\Scripts\Manager\Timer.cs" />
     <Compile Include="Assets\3.0\Scripts\Monster\MonsterLogic.cs" />
     <Compile Include="Assets\3.0\Scripts\Tile\Ladder.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\DontDieCanvas.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\ExampleStage.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\OverScript.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\Point.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\Stage.cs" />
     <None Include="Assets\3.0\Lines\Line_1.txt" />
-    <None Include="Assets\ESSET\Assets\Scripts\temp.txt" />
-    <None Include="Assets\ESSET\Assets\temp.txt" />
-    <None Include="Assets\Old\temp.txt" />
     <None Include="Assets\3.0\Audio\temp.txt" />
-    <None Include="Assets\ESSET\Assets\Lines\Line_1.txt" />
     <None Include="Assets\3.0\Prefabs\temp.txt" />
-    <None Include="Assets\ESSET\Assets\Audio\temp.txt" />
     <None Include="Assets\3.0\Scripts\temp.txt" />
+    <None Include="Assets\temp.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/chan/Desktop/EscapeMan/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 1480346891089596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4202605904215224}
   m_Father: {fileID: 0}
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480346891089596}
   m_BodyType: 0
-  m_Simulated: 1
+  m_Simulated: 0
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -154,7 +154,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &61568180783753140
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -189,7 +189,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -271,17 +271,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6908d7deafe1f4747b595fb340f66f15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterHp: 2
+  monsterHp: 8
   vecLeft: {x: -0.1, y: 0, z: 0}
   vecRight: {x: 0.1, y: 0, z: 0}
-  player: {fileID: 0}
+  player: {fileID: 1639266916831004, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
   bullets:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  bulletPrefab: {fileID: 1921048899901186, guid: b3d474a15551d154ea9f72748b432978,
+  bulletPrefab: {fileID: 1056339835156540, guid: 2b24938d34b92be4babcc2f5b823cda4,
     type: 2}
 --- !u!114 &114859462153390096
 MonoBehaviour:

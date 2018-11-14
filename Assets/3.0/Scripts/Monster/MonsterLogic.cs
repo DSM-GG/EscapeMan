@@ -12,6 +12,7 @@ public class MonsterLogic : MonoBehaviour {
 
     private void Awake()
     {
+        Player = GameObject.Find("RockMan");
         renderer = GetComponent<SpriteRenderer>();
         left = false;
     }

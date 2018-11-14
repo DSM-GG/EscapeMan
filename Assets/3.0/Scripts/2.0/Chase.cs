@@ -7,7 +7,7 @@ public class Chase : MonsterLogic2
     public bool attackedPlayer = false;
     public GameObject LeftObser;
     public GameObject RightObser;
-    public float Damage = 5;
+    public float Damage = 20;
 
     private void Update()
     {

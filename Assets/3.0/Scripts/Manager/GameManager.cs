@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     int nowChapter = 1;
     int nowStage = 1;
+    bool pannelOn = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,23 +20,29 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         IsFalling();
+        CheckDied();
 	}
 
     void IsFalling()
     {
         if (player.transform.position.y < minHeight)
-            Destroy(player); // 추후 씬을 다시 로드할 것.
+            GameOver(false);
     }
 
     void CheckDied()
     {
         if (player.GetComponent<Character>().hp <= 0)
-            GameOver();
+            GameOver(false);
     }
 
-    void GameOver()
+    public void GameOver(bool isClear)
     {
-        transform.GetComponent<OverScript>();
+        if (pannelOn) return;
+        pannelOn = true;
+        string clear = (isClear == true) ? "CLEAR" : "FAILED";
+        string time = "TIME : " + GetComponent<Timer>().GetTime();
+        string stg = nowChapter.ToString() + " - " + nowStage.ToString();
+        transform.GetComponent<OverScript>().OpenOverPannel(clear, time, stg); 
     }
 
     void Set_Chapter_Stg(int chapter, int stage)

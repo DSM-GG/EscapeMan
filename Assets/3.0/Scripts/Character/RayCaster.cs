@@ -69,8 +69,7 @@ public class RayCaster : MonoBehaviour {
 
     void LadderCheck()
     {
-        //if (!movement.IsGrounded()) return;
-
+        // if (!movement.IsGrounded()) return;
         RaycastHit2D[] hit;
         bool temp = false;
 

@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterLogic2 : MonoBehaviour {
+public class MonsterLogic2 : MonoBehaviour
+{
     public float monsterHp;
-    public Vector3 vecLeft = new Vector3 (-1, 0, 0);
+    public Vector3 vecLeft = new Vector3(-1, 0, 0);
     public Vector3 vecRight = new Vector3(1, 0, 0);
     public GameObject player;
-    
+
     protected bool left; // 왼쪽을 향할 때 true
     protected bool playerIsLeft; // 몬스터기준 플레이어 위치
     protected SpriteRenderer spriteRenderer;
@@ -18,6 +19,7 @@ public class MonsterLogic2 : MonoBehaviour {
 
     private bool isDead = false;
     private bool stop = false;
+    private bool instant = false;
 
     private void Start()
     {
@@ -47,7 +49,19 @@ public class MonsterLogic2 : MonoBehaviour {
             playerIsLeft = true;
 
         if (monsterHp <= 0)
+        {
+            if (this.gameObject.name == "DBRobot")
+            {
+                if (instant == false)
+                {
+                    Robot robot = GetComponent<Robot>();
+                    robot.Spawn();
+                    instant = true;
+                }
+            }
             StartCoroutine("MonsterDying");
+        }
+
     }
 
     virtual protected void Move() // 몬스터 단순 이동
@@ -57,7 +71,7 @@ public class MonsterLogic2 : MonoBehaviour {
         if (isDead == true)
             return;
 
-        if(left == true)
+        if (left == true)
         {
             spriteRenderer.flipX = true;
             transform.position += vecLeft;
@@ -77,7 +91,7 @@ public class MonsterLogic2 : MonoBehaviour {
     IEnumerator MonsterDying()
     {
         isDead = true;
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 7; i++)
         {
             spriteRenderer.color = new Color(1, 1, 1, 1.0f - 0.1f * i);
             yield return new WaitForSeconds(0.05f);
