@@ -21,6 +21,7 @@ public class Boss1 : MonsterLogic2
     private float time = 0.0f;
     private int dir = 1;
 
+    private AudioSource audioSource;
     private float prevX = 0, nowX = 0;
     private bool isMovingCool;
     private bool isClose = false;
@@ -32,6 +33,7 @@ public class Boss1 : MonsterLogic2
     // Use this for initialization
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         additionPos = new Vector3(0, 0, 0);
         scale = new Vector3();
         movingPos = new Vector3();
@@ -86,6 +88,11 @@ public class Boss1 : MonsterLogic2
             }
             animator.SetTrigger("die");
         }
+    }
+
+    void Boom()
+    {
+        audioSource.Play();
     }
 
     // 둥둥 떠다니는 이동을 위함

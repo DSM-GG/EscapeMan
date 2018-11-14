@@ -147,6 +147,118 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
+  - time: 0
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.16666667
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.5
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.6666667
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.8333333
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.1666666
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.3333334
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.5
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.6666666
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.8333334
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.1666667
+    functionName: Boom
+    data: 
+    objectReferenceParameter: {fileID: 11500000, guid: 763a58c6d1750da40a043eb1a48bd2e3,
+      type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 2.3333333
     functionName: Deactive
     data: 

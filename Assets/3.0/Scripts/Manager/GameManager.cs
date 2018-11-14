@@ -46,4 +46,16 @@ public class GameManager : MonoBehaviour {
         string stg = currentStage;
         transform.GetComponent<OverScript>().OpenOverPannel(clear, time, stg); 
     }
+
+    void Set_Chapter_Stg(int chapter, int stage)
+    {
+        nowChapter = chapter;
+        nowStage = stage;
+    }
+
+    public string Get_Chapter_Stg()
+    {
+        string info = "Stage " + nowChapter.ToString() + " - " + nowStage.ToString();
+        return info;
+    }
 }

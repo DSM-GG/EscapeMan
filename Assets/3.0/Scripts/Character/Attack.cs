@@ -12,12 +12,14 @@ public class Attack : MonoBehaviour
     GameObject[] bullets;       // 총알 배열
     Animator animator;
     Movement movement;
+    AudioSource audioSource;
     bool currentShoot = false;
     bool isChecking = false;
 
     // Use this for initialization
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         bullets = new GameObject[maxBullet];
         movement = GetComponent<Movement>();
@@ -40,6 +42,7 @@ public class Attack : MonoBehaviour
             if (movement.IsSliding())
                 return;
 
+            audioSource.Play();
             Bullet bullet = GetFreeBullet();
 
             // 여유총알이 남아있지 않다면 아무것도 하지 않는다.
