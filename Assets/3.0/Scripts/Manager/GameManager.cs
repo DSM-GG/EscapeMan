@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
 
     public GameObject player;
     public float minHeight;
+    public string currentStage;
 
     int nowChapter = 1;
     int nowStage = 1;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        string currentStage = SceneManager.GetActiveScene().name;
         IsFalling();
         CheckDied();
 	}
@@ -41,19 +43,7 @@ public class GameManager : MonoBehaviour {
         pannelOn = true;
         string clear = (isClear == true) ? "CLEAR" : "FAILED";
         string time = "TIME : " + GetComponent<Timer>().GetTime();
-        string stg = nowChapter.ToString() + " - " + nowStage.ToString();
+        string stg = currentStage;
         transform.GetComponent<OverScript>().OpenOverPannel(clear, time, stg); 
-    }
-
-    void Set_Chapter_Stg(int chapter, int stage)
-    {
-        nowChapter = chapter;
-        nowStage = stage;
-    }
-
-    public string Get_Chapter_Stg()
-    {
-        string info = "Stage " + nowChapter.ToString() + " - " + nowStage.ToString();
-        return info;
     }
 }
