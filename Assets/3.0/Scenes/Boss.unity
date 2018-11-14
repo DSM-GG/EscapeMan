@@ -2209,7 +2209,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024764083488192, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
@@ -2405,6 +2405,34 @@ Prefab:
       propertyPath: m_Name
       value: Boss1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114669722591783522, guid: 8b6309859c1171045b02e81d0d01eb91,
+        type: 2}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56,
+        type: 2}
+    - target: {fileID: 114292412274301476, guid: 8b6309859c1171045b02e81d0d01eb91,
+        type: 2}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56,
+        type: 2}
+    - target: {fileID: 114038210824645596, guid: 8b6309859c1171045b02e81d0d01eb91,
+        type: 2}
+      propertyPath: missilePrefab
+      value: 
+      objectReference: {fileID: 1154748813924978, guid: 1023da7e59c0d93489b1d75d90d5fdfd,
+        type: 2}
+    - target: {fileID: 114579581768067144, guid: 8b6309859c1171045b02e81d0d01eb91,
+        type: 2}
+      propertyPath: monsterHp
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 114328592256900142, guid: 8b6309859c1171045b02e81d0d01eb91,
+        type: 2}
+      propertyPath: cannonDelay
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b6309859c1171045b02e81d0d01eb91, type: 2}
   m_IsPrefabAsset: 0
@@ -2496,7 +2524,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4805070419548064, guid: 8b6309859c1171045b02e81d0d01eb91, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1132493076902296, guid: 8b6309859c1171045b02e81d0d01eb91, type: 2}
       propertyPath: m_IsActive

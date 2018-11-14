@@ -23,6 +23,7 @@ public class MonsterLogic2 : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("RockMan");
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }

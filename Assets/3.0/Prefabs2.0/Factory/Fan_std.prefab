@@ -87,7 +87,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480346891089596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -4.102, y: -0.246, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children:
   - {fileID: 4202605904215224}
@@ -143,7 +143,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1480346891089596}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
@@ -192,7 +192,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.115725994, y: 0.008963108}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -203,7 +203,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.02, y: 1.89}
+  m_Size: {x: 1.2612791, y: 1.4296567}
   m_EdgeRadius: 0
 --- !u!61 &61684061381796844
 BoxCollider2D:
@@ -239,7 +239,7 @@ Animator:
   m_GameObject: {fileID: 1480346891089596}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 977961c6690225c4c8e1e146a5b4e8d3, type: 2}
+  m_Controller: {fileID: 9100000, guid: bfcc60cebf38db34ca5d81d709e71f87, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -272,8 +272,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterHp: 8
-  vecLeft: {x: -0.1, y: 0, z: 0}
-  vecRight: {x: 0.1, y: 0, z: 0}
+  vecLeft: {x: -0.01, y: 0, z: 0}
+  vecRight: {x: 0.01, y: 0, z: 0}
   player: {fileID: 1639266916831004, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
   bullets:
   - {fileID: 0}
