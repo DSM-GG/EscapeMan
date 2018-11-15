@@ -130,6 +130,12 @@ public class Movement : MonoBehaviour {
 
     void Jump()
     {
+        if (isJumped && !isGrounded && isClimbing)
+        {
+            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
+        }
+
         if (isSliding)
             return;
 ;
