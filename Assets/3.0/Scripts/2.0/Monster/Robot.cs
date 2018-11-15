@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Robot : MonoBehaviour {
+public class Robot : MonoBehaviour
+{
     public GameObject smallRobot;
 
-    private void OnDestroy()
+    public void Spawn()
     {
-        Instantiate(this.gameObject, this.transform);
+        Debug.Log("아니;;");
+        Instantiate(smallRobot, transform.position, Quaternion.identity);
     }
 }

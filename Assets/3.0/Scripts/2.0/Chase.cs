@@ -7,7 +7,7 @@ public class Chase : MonsterLogic2
     public bool attackedPlayer = false;
     public GameObject LeftObser;
     public GameObject RightObser;
-    public float Damage = 5;
+    public float Damage = 20;
 
     private void Update()
     {
@@ -45,13 +45,7 @@ public class Chase : MonsterLogic2
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            attackedPlayer = true;
-            other.gameObject.GetComponent<Character>().Damaged(Damage);
-        }
-            
-        else if(other.gameObject.tag == "Platform")
+        if (other.gameObject.tag == "Platform")
         {
             if (left == true)
             {
@@ -61,6 +55,12 @@ public class Chase : MonsterLogic2
             {
                 left = true;
             }
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+            attackedPlayer = true;
+            other.gameObject.GetComponent<Character>().Damaged(Damage);
         }
     }
 

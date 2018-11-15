@@ -21,9 +21,11 @@ public class Boss1 : MonsterLogic2
     private float time = 0.0f;
     private int dir = 1;
 
+    private AudioSource audioSource;
     private float prevX = 0, nowX = 0;
     private bool isMovingCool;
     private bool isClose = false;
+    private bool isDie = false;
 
     private const float FADE_TIME = 0.1f;
     private const int FADE_CNT = 10;
@@ -31,11 +33,13 @@ public class Boss1 : MonsterLogic2
     // Use this for initialization
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         additionPos = new Vector3(0, 0, 0);
         scale = new Vector3();
         movingPos = new Vector3();
         player = GameObject.Find("RockMan");
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
 
         wfs_moving = new WaitForSeconds(moveCoolTime);
         wfs_fade = new WaitForSeconds(FADE_TIME);
@@ -69,16 +73,33 @@ public class Boss1 : MonsterLogic2
     protected override void Check()
     {
     }
-
+    
     public override void Damaged(float dmg)
     {
         monsterHp -= dmg;
         StartCoroutine("Fade");
+        if (monsterHp <= 0)
+        {
+            isDie = true;
+            for (int i = 0; i < 5; ++i)
+            {
+                if(i < transform.childCount && transform.GetChild(i) != null)
+                    Destroy(transform.GetChild(i).gameObject);
+            }
+            animator.SetTrigger("die");
+        }
+    }
+
+    void Boom()
+    {
+        audioSource.Play();
     }
 
     // 둥둥 떠다니는 이동을 위함
     void Floating()
     {
+        if (isDie) return;
+
         time += Time.deltaTime * floatSpeed;
         float y = Mathf.Sin(time) * 0.02f;
         additionPos.Set(0, y, 0);
@@ -87,7 +108,7 @@ public class Boss1 : MonsterLogic2
 
     void Moving()
     {
-        if (isMovingCool) return;
+        if (isMovingCool || isDie) return;
 
         movingPos.Set(moveSpeed * dir, 0, 0);
         transform.position += movingPos;
@@ -98,6 +119,12 @@ public class Boss1 : MonsterLogic2
         scale.Set(transform.localScale.x * -1, 1, 1);
         transform.localScale = scale;
         dir = (int)transform.localScale.x;
+    }
+
+    void Die()
+    {
+        GameObject.Find("Manager").GetComponent<GameManager>().GameOver(true);
+        Destroy(gameObject);
     }
 
     IEnumerator MovingCool()

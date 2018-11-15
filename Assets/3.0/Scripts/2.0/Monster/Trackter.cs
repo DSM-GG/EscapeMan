@@ -5,9 +5,14 @@ using UnityEngine;
 public class Trackter : MonsterLogic2 {
     public bool crashed;
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.tag == "Wall")
+        if (other.gameObject.tag == "Player")
+        {
+            Character character = other.gameObject.GetComponent<Character>();
+            character.Damaged(30);
+        }
+        if (other.gameObject.tag == "Platform")
             StartCoroutine("Crash");
     }
 

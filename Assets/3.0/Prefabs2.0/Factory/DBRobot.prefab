@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 114346265064857538}
   - component: {fileID: 61116447565759738}
   - component: {fileID: 114308086603493738}
+  - component: {fileID: 50744095464015242}
   m_Layer: 0
   m_Name: DBRobot
   m_TagString: Enemy
@@ -86,9 +87,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834909766543008}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.6102, y: -3.2741213, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4399963637979638}
   m_Father: {fileID: 0}
@@ -135,6 +136,26 @@ Transform:
   m_Father: {fileID: 4399963637979638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50744095464015242
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1834909766543008}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!61 &61116447565759738
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -144,7 +165,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -169,7 +190,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4, y: 0}
@@ -194,7 +215,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.4, y: 0}
@@ -251,7 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c247d514791e7474b93cdefd39a4e372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smallRobot: {fileID: 0}
+  smallRobot: {fileID: 1188432073326152, guid: d72d85734045d484785d8d52670b38b3, type: 2}
 --- !u!114 &114346265064857538
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,13 +284,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55e335b4bd553f4b960135f1e7b0626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterHp: 0
+  monsterHp: 6
   vecLeft: {x: -0.01, y: 0, z: 0}
   vecRight: {x: 0.01, y: 0, z: 0}
-  player: {fileID: 0}
+  player: {fileID: 1639266916831004, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
   attackedPlayer: 0
   LeftObser: {fileID: 1667423783048774}
   RightObser: {fileID: 1185166287709206}
+  Damage: 5
 --- !u!114 &114995393949762030
 MonoBehaviour:
   m_ObjectHideFlags: 1

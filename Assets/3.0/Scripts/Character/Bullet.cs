@@ -9,7 +9,9 @@ public class Bullet : MonoBehaviour {
     public float bullet_damage;
     public float bullet_Distance;
     public WaitForSeconds bullet_Wait_second;
+    //public AudioClip hit_effect;
 
+    private AudioSource audioSource;
     private const float BULLET_MAX_TIME = 1.5f;
     private Animator animator;
 
@@ -25,13 +27,9 @@ public class Bullet : MonoBehaviour {
         bullet_Wait_second = new WaitForSeconds(BULLET_MAX_TIME);
         rb = GetComponent<Rigidbody2D>();
         character = GetComponent<Character>();
+        audioSource = GetComponent<AudioSource>();
         originX = gameObject.transform.position.x;
     }
-
-    //private void Update()
-    //{
-
-    //}
 
     public void Move(Vector2 dir, Vector3 pos)
     {
@@ -47,9 +45,9 @@ public class Bullet : MonoBehaviour {
     {
         if(collision.tag == "Enemy")
         {
+            HitAnim();
             collision.GetComponent<MonsterLogic2>().Damaged(bullet_damage);
             StopCoroutine("BulletTimer");
-            HitAnim();
         }
         else if(collision.tag == "Platform")
         {
@@ -59,8 +57,9 @@ public class Bullet : MonoBehaviour {
 
     void HitAnim()
     {
-        rb.simulated = false;
+        audioSource.Play();
         animator.SetTrigger("hitted");
+        rb.simulated = false;        
     }
 
     void Deactive()

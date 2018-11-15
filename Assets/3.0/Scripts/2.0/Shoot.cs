@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shoot : MonsterLogic2 {
+public class Shoot : MonsterLogic2
+{
     public GameObject[] bullets;
     public GameObject bulletPrefab;
     const int bullets_number = 5;
     bool canFire = true;
-    
+
     virtual protected void Awake()
     {
         MakeBullet();
@@ -15,8 +16,8 @@ public class Shoot : MonsterLogic2 {
 
     void MakeBullet()
     {
-        bullets = new GameObject[bullets_number]; 
-        for(int i = 0; i < bullets_number; i++)
+        bullets = new GameObject[bullets_number];
+        for (int i = 0; i < bullets_number; i++)
         {
             bullets[i] = Instantiate(bulletPrefab);
             bullets[i].SetActive(false);
@@ -38,12 +39,12 @@ public class Shoot : MonsterLogic2 {
 
         MBullet bullet = GetFreeBullet();
 
-        if(Lincount == true)
+        if (Lincount == true)
         {
             spriteRenderer.flipX = true;
             bullet.Fire(new Vector2(-5, 0), this.gameObject.transform.position);
         }
-        else if(Rincount == true)
+        else if (Rincount == true)
         {
             spriteRenderer.flipX = false;
             bullet.Fire(new Vector2(5, 0), this.gameObject.transform.position);
@@ -53,9 +54,9 @@ public class Shoot : MonsterLogic2 {
 
     MBullet GetFreeBullet()
     {
-        for(int i = 0; i < bullets_number; i++)
+        for (int i = 0; i < bullets_number; i++)
         {
-            if(bullets[i].activeSelf == false)
+            if (bullets[i].activeSelf == false)
             {
                 return bullets[i].GetComponent<MBullet>();
             }

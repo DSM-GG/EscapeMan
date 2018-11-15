@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour {
     bool isUpLadder = false;
     bool isDownLadder = false;
     bool isSlideCool = false;
+    bool isStart = false;
 
     Animator animator;
     SpriteRenderer sr;
@@ -49,9 +50,16 @@ public class Movement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (!isStart) return;
+
         Jump();
         Sliding();
         InputMovement();
+    }
+
+    void Active()
+    {
+        isStart = true;
     }
 
     void InputMovement()

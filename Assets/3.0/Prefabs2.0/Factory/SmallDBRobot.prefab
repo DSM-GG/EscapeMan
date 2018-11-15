@@ -154,7 +154,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!61 &61143547368402942
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -214,7 +214,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -259,13 +259,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55e335b4bd553f4b960135f1e7b0626, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterHp: 10
+  monsterHp: 4
   vecLeft: {x: -0.01, y: 0, z: 0}
   vecRight: {x: 0.01, y: 0, z: 0}
   player: {fileID: 0}
   attackedPlayer: 0
   LeftObser: {fileID: 1233578680093252}
   RightObser: {fileID: 1692951690088616}
+  Damage: 5
 --- !u!114 &114635580190873226
 MonoBehaviour:
   m_ObjectHideFlags: 1

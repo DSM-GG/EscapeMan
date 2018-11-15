@@ -18,6 +18,11 @@ public class Character_UI : MonoBehaviour
         stageText.text = GetComponent<GameManager>().Get_Chapter_Stg();
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        character = GameObject.Find("RockMan").GetComponent<Character>();
+    }
+
     private void FixedUpdate()
     {
         ApplyChanges();
