@@ -100,6 +100,7 @@
     <Compile Include="Assets\3.0\Scripts\UI\Hp.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\OverScript.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\Point.cs" />
+    <Compile Include="Assets\3.0\Scripts\UI\RestartButton.cs" />
     <Compile Include="Assets\3.0\Scripts\UI\Stage.cs" />
     <None Include="Assets\3.0\Lines\Line_1.txt" />
     <None Include="Assets\3.0\Audio\temp.txt" />
