@@ -164,6 +164,23 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68af4baac1101d44f99f94ffc6406064, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &121735232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1586774184306000, guid: 4cb7c233cd1d91a4781cca2ca01ec1d6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1619413632}
+--- !u!114 &121735239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121735232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e8c4a0fd9d172746a886bcfedce09fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StageText: {fileID: 861085558}
 --- !u!1001 &182070641
 Prefab:
   m_ObjectHideFlags: 0
@@ -1425,10 +1442,9 @@ Prefab:
       propertyPath: m_Name
       value: RockMan
       objectReference: {fileID: 0}
-    - target: {fileID: 114276810243965736, guid: 99be65e4e9aadf84abc9500243899615,
-        type: 2}
-      propertyPath: hpMax
-      value: 100
+    - target: {fileID: 1639266916831004, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99be65e4e9aadf84abc9500243899615, type: 2}
@@ -18716,24 +18732,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114292412274301476, guid: 8b6309859c1171045b02e81d0d01eb91,
-        type: 2}
-      propertyPath: bombPrefab
-      value: 
-      objectReference: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56,
-        type: 2}
-    - target: {fileID: 114669722591783522, guid: 8b6309859c1171045b02e81d0d01eb91,
-        type: 2}
-      propertyPath: bombPrefab
-      value: 
-      objectReference: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56,
-        type: 2}
-    - target: {fileID: 114038210824645596, guid: 8b6309859c1171045b02e81d0d01eb91,
-        type: 2}
-      propertyPath: missilePrefab
-      value: 
-      objectReference: {fileID: 1154748813924978, guid: 1023da7e59c0d93489b1d75d90d5fdfd,
-        type: 2}
+    - target: {fileID: 1132493076902296, guid: 8b6309859c1171045b02e81d0d01eb91, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b6309859c1171045b02e81d0d01eb91, type: 2}
   m_IsPrefabAsset: 0

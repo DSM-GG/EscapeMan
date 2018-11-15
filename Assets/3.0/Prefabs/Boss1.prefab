@@ -178,7 +178,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132493076902296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0146713, y: 0.42, z: 1}
+  m_LocalPosition: {x: -3.7418983, y: 0.4679296, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4199772167750566}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df0f5e47b82bf1c46ba3a8b5a03762b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missilePrefab: {fileID: 1154748813924978, guid: bb3b61f205c0016499999df9b0afee9f,
+  missilePrefab: {fileID: 1154748813924978, guid: 1023da7e59c0d93489b1d75d90d5fdfd,
     type: 2}
 --- !u!114 &114292412274301476
 MonoBehaviour:
@@ -456,7 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbd49cb800210e44aee9816eed0ab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 1227293673386126, guid: 671e6ec3bd9261d46ae7670da4c9f4f0, type: 2}
+  bombPrefab: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56, type: 2}
   bombAmount: 6
 --- !u!114 &114328592256900142
 MonoBehaviour:
@@ -505,7 +505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fbd49cb800210e44aee9816eed0ab72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bombPrefab: {fileID: 1227293673386126, guid: 671e6ec3bd9261d46ae7670da4c9f4f0, type: 2}
+  bombPrefab: {fileID: 1227293673386126, guid: a11c9dc36bbb965488beb11eba191a56, type: 2}
   bombAmount: 6
 --- !u!212 &212034053672673798
 SpriteRenderer:

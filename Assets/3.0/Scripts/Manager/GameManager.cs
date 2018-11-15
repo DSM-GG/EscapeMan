@@ -16,18 +16,20 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        string currentStage = SceneManager.GetActiveScene().name;
+        currentStage = SceneManager.GetActiveScene().name;
+        Debug.Log(currentStage);
         IsFalling();
         CheckDied();
 	}
 
     void IsFalling()
     {
-        if (player.transform.position.y < minHeight)
+        if (player != null && player.transform.position.y < minHeight)
             GameOver(false);
     }
 
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour {
         pannelOn = true;
         string clear = (isClear == true) ? "CLEAR" : "FAILED";
         string time = "TIME : " + GetComponent<Timer>().GetTime();
-        string stg = currentStage;
+        string stg = "STAGE : " + currentStage;
         transform.GetComponent<OverScript>().OpenOverPannel(clear, time, stg); 
     }
 
@@ -55,7 +57,8 @@ public class GameManager : MonoBehaviour {
 
     public string Get_Chapter_Stg()
     {
-        string info = "Stage " + nowChapter.ToString() + " - " + nowStage.ToString();
+        player = GameObject.Find("RockMan");
+        string info = "Stage " + currentStage;
         return info;
     }
 }
