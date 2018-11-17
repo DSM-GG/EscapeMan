@@ -7,6 +7,8 @@ public class Movement : MonoBehaviour {
     float jumpPower;            // 점프 크기 
     float slidingPower;         // 슬라이딩 크기
     float ladderSpeed;          // 사다리 오르는 속도
+
+    public float limitDropVelo;
     public Vector3 direction;
 
     bool isClimbing = false;
@@ -52,6 +54,8 @@ public class Movement : MonoBehaviour {
     void Update() {
         if (!isStart) return;
 
+        Debug.Log("asd " + isUpLadder);
+
         Jump();
         Sliding();
         InputMovement();
@@ -64,6 +68,9 @@ public class Movement : MonoBehaviour {
 
     void InputMovement()
     {
+        Debug.Log("ISgrounded " + isGrounded + " " + "UP " + isUpLadder + " " + "DOWN " + isDownLadder);
+
+        Debug.Log(ladderPosX);
         // 슬라이딩 중에는 이동 입력 X
         if (isSliding)
             return;
@@ -102,6 +109,8 @@ public class Movement : MonoBehaviour {
         {
             isClimbing = true;
             // rigidbody2D의 중력을 잠시 꺼둔다.
+
+            rb.velocity *= 0;
             rb.isKinematic = true;
             ladder_velocity.y = ladderSpeed * 1;
             transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
@@ -114,6 +123,8 @@ public class Movement : MonoBehaviour {
         {
             isClimbing = true;
             // rigidbody2D의 중력을 잠시 꺼둔다.
+
+            rb.velocity *= 0;
             rb.isKinematic = true;
             ladder_velocity.y = ladderSpeed * -1;
             transform.position.Set(ladderPosX, transform.position.y, transform.position.z);
@@ -130,6 +141,12 @@ public class Movement : MonoBehaviour {
 
     void Jump()
     {
+        if (rb.velocity.y < limitDropVelo * -1.0f)
+        {
+            Debug.Log("CHECK");
+            rb.velocity *= 0.99f;
+        }
+
         if (isJumped && !isGrounded && isClimbing)
         {
             rb.isKinematic = true;
@@ -138,7 +155,7 @@ public class Movement : MonoBehaviour {
 
         if (isSliding)
             return;
-;
+
         // 점프해서 착지했다면 
         if (isGrounded && isJumped)
         {
@@ -216,7 +233,7 @@ public class Movement : MonoBehaviour {
     {
         ladderPosX = posX;
         isUpLadder = val;
-        if (!val && isGrounded)
+        if (!val /*&& isGrounded*/)
         {
             animator.SetTrigger("isGrounded");
             isClimbing = false;
@@ -228,14 +245,11 @@ public class Movement : MonoBehaviour {
     {
         ladderPosX = posX;
         isDownLadder = val;
-        
-        if(!isDownLadder)
+
+        if (!isDownLadder)
         {
-            if (!isUpLadder)
-            {
-                isClimbing = false;
-                rb.isKinematic = false;
-            }
+            isClimbing = false;
+            rb.isKinematic = false;
         }
     }
 

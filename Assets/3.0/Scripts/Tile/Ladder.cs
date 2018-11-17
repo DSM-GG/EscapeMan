@@ -9,7 +9,6 @@ public class Ladder : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Check");
             // 여기 수정할 것
             collision.GetComponent<Movement>().SetLadder(true, collision.transform.position.x);
         }
@@ -19,7 +18,6 @@ public class Ladder : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Exit");
             collision.GetComponent<Movement>().SetLadder(false, 0);
         }
     }

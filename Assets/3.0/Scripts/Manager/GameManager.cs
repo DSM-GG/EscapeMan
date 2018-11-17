@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        currentStage = " ";
         currentStage = SceneManager.GetActiveScene().name;
-        Debug.Log(currentStage);
         IsFalling();
         CheckDied();
 	}

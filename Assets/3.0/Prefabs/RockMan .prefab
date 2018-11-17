@@ -217,6 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 047a1e9cae3ff9d43a2b6784723e5773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  limitDropVelo: 5
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &114276810243965736
 MonoBehaviour:

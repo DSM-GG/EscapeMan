@@ -38,6 +38,8 @@ public class Attack : MonoBehaviour
         // Z키 입력 시 
         if(Input.GetKeyDown("z"))
         {
+
+            Debug.Log("ATTAC");
             // 슬라이딩중이면 공격을 하지 않는다.
             if (movement.IsSliding())
                 return;

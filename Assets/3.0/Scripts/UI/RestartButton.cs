@@ -9,7 +9,7 @@ public class RestartButton : MonoBehaviour
     public void onClick()
     {
         SceneManager.LoadScene("1-1");
-        UI.SetActive(false);
+        Destroy(UI);
         Destroy(this.gameObject);
     }
 

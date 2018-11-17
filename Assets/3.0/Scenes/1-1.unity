@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c485caf6153a6419f952684b3acc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UI: {fileID: 756524423}
+  UI: {fileID: 1065100993}
 --- !u!114 &121735239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2333,7 +2333,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1658006231}
   - component: {fileID: 1658006236}
-  - component: {fileID: 1658006237}
   - component: {fileID: 1658006235}
   - component: {fileID: 1658006234}
   - component: {fileID: 1658006233}
@@ -18616,17 +18615,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1658006237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1658006230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68d6d5a3e5552584394f26e000af7970, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1662038381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4534368858386152, guid: 68af4baac1101d44f99f94ffc6406064,

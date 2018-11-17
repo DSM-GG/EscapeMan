@@ -72,49 +72,49 @@ public class RayCaster : MonoBehaviour {
         // if (!movement.IsGrounded()) return;
         RaycastHit2D[] hit;
         bool temp = false;
+        float tempX = 0.0f;
 
-        v.Set(transform.position.x, transform.position.y + height - minus2, transform.position.z);
-        hit = Physics2D.RaycastAll(v, Vector2.down, (groundDist * 2) /*- 0.05f*/);
+        // down
+        v.Set(transform.position.x, transform.position.y /*+ height*/, transform.position.z);
+        hit = Physics2D.RaycastAll(v, Vector2.down, (groundDist * 2));
         foreach (RaycastHit2D elem in hit)
         {
             if (elem.transform.tag == "Ladder")
             {
-                Debug.Log("ASD");
+                tempX = elem.transform.position.x;
                 temp = true;
             }
         }
-        movement.SetDownLadder(temp, transform.position.x);
+        movement.SetDownLadder(temp, tempX);
 
         temp = false;
 
+        // up
         v.Set(transform.position.x, transform.position.y - height, transform.position.z);
-        hit = Physics2D.RaycastAll(v, Vector2.up, (groundDist * 2) - minus);
+        hit = Physics2D.RaycastAll(v, Vector2.up, (groundDist * 2));
         foreach (RaycastHit2D elem in hit)
         {
             if (elem.transform.tag == "Ladder")
             {
+                tempX = elem.transform.position.x;
                 temp = true;
             }
         }
-        movement.SetUpLadder(temp, transform.position.x);
+        movement.SetUpLadder(temp, tempX);
     }
 
     private void OnDrawGizmos()
     {
-        float te = transform.localScale.x / 10;
-        Vector3 asd = new Vector3(transform.position.x - te, transform.position.y, transform.position.z);
-        Gizmos.DrawRay(asd, Vector2.down * groundDist);  
-        asd = new Vector3(transform.position.x + te, transform.position.y, transform.position.z);
-        Gizmos.DrawRay(asd, Vector2.down * groundDist);
+        Gizmos.color = Color.red;
 
         Vector3 temp = transform.position;
         // UP
         temp.Set(temp.x, temp.y - height, temp.z);
-        Gizmos.DrawRay(temp, Vector2.up * ( (groundDist * 2) - minus));
+        Gizmos.DrawRay(temp, Vector2.up * ( groundDist * 2) );
 
         // Down
-        temp.Set(temp.x, transform.position.y + height - minus2, temp.z);
-        Gizmos.DrawRay(temp, Vector2.down * ( (groundDist * 2) - 0.05f));
+        temp.Set(temp.x, transform.position.y , temp.z);
+       // Gizmos.DrawRay(temp, Vector2.down * ( groundDist * 2) );
     }
 
 }
