@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1639266916831004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.06, y: 3.29, z: 0}
+  m_LocalPosition: {x: -5.9, y: 3.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -232,7 +232,7 @@ MonoBehaviour:
   fade_sec: 0.1
   damage: 2
   speed: 1.5
-  ladderSpeed: 0.01
+  ladderSpeed: 0.02
   status: 0
   score: 0
   jumpPower: 3

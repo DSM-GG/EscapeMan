@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-C:/Users/user/Desktop/RockMan_Build/EscapeMan.exe
+C:/Users/user/Desktop/말똥가리/EscapeMan.exe
 SceneListBegin?
 Assets/3.0/Scenes/1-1.unity
 Assets/3.0/Scenes/1-2.unity
